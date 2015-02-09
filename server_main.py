@@ -1,10 +1,8 @@
 import sys, os
 from functools import partial
+import threading
 from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
 
-urlpath = {
-"" : "main.html"
-        }
 # TODO : create xml for create url mapping table
 # TODO : create transfrom template
 # TODO : db connection
@@ -35,6 +33,9 @@ class JudgeRequestHandler(BaseHTTPRequestHandler):
             self.send_error(404);
 
     def do_POST(self):
+        """
+        receive POST request
+        """
         global urlpath
         key = self.path[1:]
 
@@ -56,7 +57,16 @@ class JudgeRequestHandler(BaseHTTPRequestHandler):
         """
         compile code check recv result and execute recv result data
         """
-        pass
+        t_id = threading.current_thread().get_ident()
+        self[lang](t_id, code)
+        
+    def __getitem__(self, index):
+        if index == "cpp":
+            return self.cpp_test
+        elif index == "java":
+            return self.java_test
+        elif index == "python":
+            return self.python_test
 
 
     def content_parsing(self, contents):
