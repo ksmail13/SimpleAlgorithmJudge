@@ -2,6 +2,7 @@ import subprocess
 import threading
 program_path = "temp/"
 
+
 def __create_code(t_id, code, extention='cc'):
     global program_path
     file_path = "{}test_{}.{}".format(program_path, t_id, extention)
@@ -32,16 +33,13 @@ def cpp_test(t_id, code):
     for line in p_out.readlines():
         print line,
 
-
-
-
 def java_test(t_id, code):
     pass
 
 def python_test(t_id, code):
     pass
 
-def tester_main():
+def __tester_main():
     cpp_test(threading.current_thread().ident, """
     #include <stdio.h>
 
@@ -53,4 +51,4 @@ def tester_main():
    """)
 
 if __name__=="__main__":
-    tester_main()
+    __tester_main()
