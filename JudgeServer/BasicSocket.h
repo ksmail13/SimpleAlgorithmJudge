@@ -25,19 +25,24 @@ namespace Network
         public:
             BasicSocket(int socktype, int proto_type):_fd(socket(PF_INET, socktype, proto_type)), _nonblock(false){}
             ~BasicSocket(){}
-            std::string getAddress();
+            void setAddress(struct sockaddr_in &);
+            struct sockaddr_in &getAddress();
+            std::string getIpAddress();
             bool connect(struct sockaddr *addr, socklen_t adr_sz);
             bool bind(struct sockaddr *addr, socklen_t adr_sz);
             bool listen(int backlog);
+
+            BasicSocket accept();
             
             SignedSize recv(void *buf, size_t buf_len, int msgtype);
             SignedSize send(void *buf, size_t buf_len, int msgtype);
 
             void setNonblockSocket(bool);
             bool isNonblockSocket();
+
             // TODO : Accept & buffer mode
         protected:
-            struct sockaddr_in *_addr_info;
+            struct sockaddr_in _addr_info;
 
     };
 }
