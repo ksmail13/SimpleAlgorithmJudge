@@ -42,8 +42,14 @@ SignedSize Network::BasicSocket::send(void *buf, size_t buf_len, int msgtype)
 
 BasicSocket Network::BasicSocket::accept() 
 {
-    struct sockaddr
-    int clnt_fd = connect(_fd, 
+     struct sockaddr_in clnt_adr;
+     socklen_t adr_sz = sizeof(clnt_adr);
+     
+     int clnt_sock = ::accept(_fd, (struct sockaddr*) &clnt_adr, &adr_sz);
+     BasicSocket new_clnt	= clnt_sock;
+     new_clnt._addr_info	= clnt_adr;
+     
+     return new_clnt;
 }
 
 void Network::BasicSocket::setNonblockSocket(bool accept)

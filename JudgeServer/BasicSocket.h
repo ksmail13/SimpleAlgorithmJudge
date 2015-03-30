@@ -24,6 +24,7 @@ namespace Network
             bool _nonblock;
         public:
             BasicSocket(int socktype, int proto_type):_fd(socket(PF_INET, socktype, proto_type)), _nonblock(false){}
+            BasicSocket(int fd):_fd(fd){};
             ~BasicSocket(){}
             void setAddress(struct sockaddr_in &);
             struct sockaddr_in &getAddress();
@@ -40,7 +41,14 @@ namespace Network
             void setNonblockSocket(bool);
             bool isNonblockSocket();
 
-            // TODO : Accept & buffer mode
+            // TODO : buffer mode
+            
+            BasicSocket operator= (const FileDescriptor &fd) {
+                BasicSocket new_sock(fd);
+                
+                return new_sock;
+            }
+
         protected:
             struct sockaddr_in _addr_info;
 
