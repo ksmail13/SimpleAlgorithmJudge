@@ -3,10 +3,10 @@
 
 #include <stdio.h>
 
-#define BaseLogMessage(target,msg, ...) fprintf(target, "[%s(%d)-%s] ", __FILE__, __LINE__, __FUNCTION__); fprintf(target, msg, __VA_ARGS__)
+#define BaseLogMessage(target, ...) fprintf(target, "[%s(%d)-%s] ", __FILE__, __LINE__, __FUNCTION__); fprintf(target, __VA_ARGS__); fputc('\n', target)
 
-#define InformMessage(msg, ...) BaseLogMessage(stdout, msg, __VA_ARGS__);
+#define InformMessage(...) BaseLogMessage(stdout, __VA_ARGS__);
 
-#define ErrorMessage(msg, ...) BaseLogMessage(stderr, msg, __VA_ARGS__ );
+#define ErrorMessage(msg, ...) BaseLogMessage(stderr, __VA_ARGS__ );
 
 #endif

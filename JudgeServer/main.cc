@@ -4,6 +4,6 @@
 using namespace std;
 int main()
 { 
-	InformMessage("information", 1);
+	InformMessage("information %d", 1);
     return 0;
 }
