@@ -1,0 +1,55 @@
+# this documents for communicate judge server between client server
+
+
+login protocol
+p_type = LOGIN
+c(lient) to s(erver)
+{
+    "id":"user-id",
+    "passwd" : "user_pw",
+}
+
+p_type = LOGIN_RESULT
+s to c
+{
+    "result" : "true/false"
+    #if result is true
+    "session-id" : "session_id"
+}
+
+submit protocol
+
+c to s
+{
+    "session-id" : "session_id",
+    "qno" : "qno",
+    "lang" : "lang",
+    "code" : "code"
+}
+
+
+s to c
+{
+    "result" : "true/false"
+    "reason" : "reason_about_result"
+}
+
+s to c
+{
+    "qno" : "qno"
+    "submit_result" : "accept/wrong/time/runtime",
+}
+
+get information
+c to s
+{
+    "request":["question", "language", "history"]
+}
+
+s to c
+{
+    "question" : ["q1", "q2", ...],
+    "lang" : ["c++(11)", "java", ...],
+    "history" : [{"qno" : "q1","result" :"wrong", ... }]
+}
+
