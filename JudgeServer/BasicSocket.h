@@ -29,7 +29,9 @@ namespace Network
 
             BasicSocket(int fd):_fd(fd){};
             
-            virtual ~BasicSocket(){};
+            virtual ~BasicSocket(){this->close();};
+
+            void close() {::close(_fd);}
             
             void setAddress(struct sockaddr_in &);
             struct sockaddr_in &getAddress() const;
