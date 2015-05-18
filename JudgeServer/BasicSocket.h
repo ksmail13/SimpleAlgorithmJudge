@@ -46,11 +46,11 @@ namespace Network
 
             BasicSocket accept();
             
-            SignedSize recv(const void *buf, size_t buf_len, int msgtype);
-            SignedSize send(const void *buf, size_t buf_len, int msgtype);
+            SignedSize recv(void *buf, size_t buf_len, int msgtype);
+            SignedSize send(void *buf, size_t buf_len, int msgtype);
             
-            SignedSize write(const void *buf, size_t buf_len);
-            SignedSize read(const void *buf, size_t buf_len);
+            SignedSize write(void *buf, size_t buf_len);
+            SignedSize read(void *buf, size_t buf_len);
 
             void setNonblockSocket(bool);
             bool isNonblockSocket();
