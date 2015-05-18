@@ -29,7 +29,7 @@ namespace Network
 
             BasicSocket(int fd):_fd(fd){};
             
-            virtual ~BasicSocket() = 0;
+            virtual ~BasicSocket(){};
             
             void setAddress(struct sockaddr_in &);
             struct sockaddr_in &getAddress() const;
