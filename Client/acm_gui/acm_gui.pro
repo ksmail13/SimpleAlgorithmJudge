@@ -15,12 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
     loginwidget.cpp \
     loginwindow.cpp \
-    mainwidget.cpp
+    mainwidget.cpp \
+    socketmanager.cpp
 
 HEADERS  += \
     loginwidget.h \
     loginwindow.h \
-    mainwidget.h
+    mainwidget.h \
+    InetSocket.h \
+    BasicSocket.h \
+    socketmanager.h
 
 FORMS    += \
     loginwindow.ui
