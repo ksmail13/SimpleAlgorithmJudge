@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "loginwidget.h"
 #include "mainwidget.h"
+#include "socketmanager.h"
+
 /*
 namespace Ui {
 class MainWindow;
@@ -24,6 +26,7 @@ private:
     QString id;
     QString pw;
     QString ip;
+    SocketManager *socket_manager;
 
 public slots:
     void helpBox();

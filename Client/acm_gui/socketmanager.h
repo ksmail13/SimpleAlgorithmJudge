@@ -2,6 +2,9 @@
 #define SOCKETMANAGER_H
 
 #include "InetSocket.h"
+#include <QString>
+
+using namespace Network;
 
 class SocketManager
 {
@@ -14,6 +17,9 @@ public:
     ~SocketManager();
     struct sockaddr_in serv_adr;
     const u_int16_t port = 54321;
+
+    bool setIP(QString ip);
+    void send(QString str);
 
 };
 

@@ -8,8 +8,6 @@ SocketManager::SocketManager()
     _socket = new InetSocket(SOCK_STREAM, 0);
 
 
-
-
 }
 
 bool SocketManager::setIP(QString ip)

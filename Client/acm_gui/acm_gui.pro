@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     loginwidget.cpp \
     loginwindow.cpp \
     mainwidget.cpp \
-    socketmanager.cpp
+    socketmanager.cpp \
+    BasicSocket.cc
 
 HEADERS  += \
     loginwidget.h \
@@ -24,7 +25,8 @@ HEADERS  += \
     mainwidget.h \
     InetSocket.h \
     BasicSocket.h \
-    socketmanager.h
+    socketmanager.h \
+    logger.h
 
 FORMS    += \
     loginwindow.ui
