@@ -31,6 +31,10 @@ namespace Network
             
             virtual ~BasicSocket(){this->close();};
 
+            FileDescriptor getFileDescriptor() const {
+                return _fd;
+            }
+
             void close() {::close(_fd);}
             
             void setAddress(struct sockaddr_in &);
@@ -42,18 +46,18 @@ namespace Network
 
             BasicSocket accept();
             
-            SignedSize recv(void *buf, size_t buf_len, int msgtype);
-            SignedSize send(void *buf, size_t buf_len, int msgtype);
+            SignedSize recv(const void *buf, size_t buf_len, int msgtype);
+            SignedSize send(const void *buf, size_t buf_len, int msgtype);
             
-            SignedSize write(void *buf, size_t buf_len);
-            SignedSize read(void *buf, size_t buf_len);
+            SignedSize write(const void *buf, size_t buf_len);
+            SignedSize read(const void *buf, size_t buf_len);
 
             void setNonblockSocket(bool);
             bool isNonblockSocket();
 
             // TODO : buffer mode
             
-            BasicSocket operator= (const FileDescriptor &fd) {
+            virtual BasicSocket operator= (const FileDescriptor &fd) {
                 BasicSocket new_sock(fd);
                 
                 return new_sock;

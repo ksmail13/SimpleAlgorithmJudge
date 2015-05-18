@@ -43,7 +43,7 @@ void PollManager::onEvent(const struct epoll_event &event)
     }
 }
 
-void PollManager::wait(int timeout)
+void PollManager::polling(int timeout)
 {
     int nevs, i;
     struct epoll_event evs[MAX_POLL] = {0,};
