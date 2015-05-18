@@ -1,3 +1,6 @@
+#ifndef SERVER_SOCKET_H
+#define SERVER_SOCKET_H
+
 #include "BasicSocket.h"
 
 namespace Network
@@ -17,3 +20,5 @@ namespace Network
         friend class InetSocket;
     }
 };
+
+#endif

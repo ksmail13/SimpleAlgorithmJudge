@@ -18,7 +18,7 @@ InetSocket ServerSocket::accept()
     InetSocket clnt;
     struct sockaddr_in clnt_adr;
     socklen_t adr_sz;
-    clnt = accept(socket._fd, (struct sockaddr*)&clnt_adr, &adr_sz); 
+    clnt = ::accept(socket._fd, (struct sockaddr*)&clnt_adr, &adr_sz); 
     clnt.setAddress(clnt_adr);
     
     return clnt;
