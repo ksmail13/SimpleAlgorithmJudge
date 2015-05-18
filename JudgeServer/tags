@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BASICSOCKET_H	BasicSocket.h	2;"	d
+BaseLogMessage	logger.h	6;"	d
+BasicSocket	BasicSocket.h	/^            BasicSocket(int fd):_fd(fd){};$/;"	f	class:Network::BasicSocket
+BasicSocket	BasicSocket.h	/^            BasicSocket(int socktype, int proto_type):_fd(socket(PF_INET, socktype, proto_type)), _nonblock(false){}$/;"	f	class:Network::BasicSocket
+BasicSocket	BasicSocket.h	/^    class BasicSocket {$/;"	c	namespace:Network
+ErrorMessage	logger.h	10;"	d
+FileDescriptor	BasicSocket.h	/^typedef int FileDescriptor;$/;"	t
+InformMessage	logger.h	8;"	d
+LOGGER_H	logger.h	2;"	d
+Network	BasicSocket.h	/^namespace Network$/;"	n
+SignedSize	BasicSocket.h	/^typedef ssize_t SignedSize;$/;"	t
+_addr_info	BasicSocket.h	/^            struct sockaddr_in _addr_info;$/;"	m	class:Network::BasicSocket	typeref:struct:Network::BasicSocket::sockaddr_in
+_buf	BasicSocket.h	/^            char *_buf;$/;"	m	class:Network::BasicSocket
+_fd	BasicSocket.h	/^            FileDescriptor _fd;$/;"	m	class:Network::BasicSocket
+_nonblock	BasicSocket.h	/^            bool _nonblock;$/;"	m	class:Network::BasicSocket
+accept	BasicSocket.cc	/^Network::BasicSocket Network::BasicSocket::accept() $/;"	f	class:Network::BasicSocket
+bind	BasicSocket.cc	/^bool Network::BasicSocket::bind(struct sockaddr *addr, socklen_t adr_sz)$/;"	f	class:Network::BasicSocket
+connect	BasicSocket.cc	/^bool Network::BasicSocket::connect(struct sockaddr *addr, socklen_t adr_sz)$/;"	f	class:Network::BasicSocket
+getIpAddress	BasicSocket.cc	/^std::string Network::BasicSocket::getIpAddress() $/;"	f	class:Network::BasicSocket
+isNonblockSocket	BasicSocket.cc	/^bool Network::BasicSocket::isNonblockSocket()$/;"	f	class:Network::BasicSocket
+listen	BasicSocket.cc	/^bool Network::BasicSocket::listen(int backlog)$/;"	f	class:Network::BasicSocket
+main	main.cc	/^int main()$/;"	f
+operator =	BasicSocket.h	/^            BasicSocket operator= (const FileDescriptor &fd) {$/;"	f	class:Network::BasicSocket
+recv	BasicSocket.cc	/^SignedSize Network::BasicSocket::recv(void *buf, size_t buf_len, int msgtype)$/;"	f	class:Network::BasicSocket
+send	BasicSocket.cc	/^SignedSize Network::BasicSocket::send(void *buf, size_t buf_len, int msgtype)$/;"	f	class:Network::BasicSocket
+setAddress	BasicSocket.cc	/^void Network::BasicSocket::setAddress(struct sockaddr_in &addr)$/;"	f	class:Network::BasicSocket
+setNonblockSocket	BasicSocket.cc	/^void Network::BasicSocket::setNonblockSocket(bool accept)$/;"	f	class:Network::BasicSocket
+~BasicSocket	BasicSocket.h	/^            ~BasicSocket(){}$/;"	f	class:Network::BasicSocket

@@ -23,11 +23,16 @@ namespace Network
             char *_buf;
             bool _nonblock;
         public:
-            BasicSocket(int socktype, int proto_type):_fd(socket(PF_INET, socktype, proto_type)), _nonblock(false){}
+            BasicSocket(int proto_fam, int socktype, int proto_type):
+                _fd(socket(proto_fam, socktype, proto_type)), 
+                _nonblock(false){}
+
             BasicSocket(int fd):_fd(fd){};
-            ~BasicSocket(){}
+            
+            virtual ~BasicSocket() = 0;
+            
             void setAddress(struct sockaddr_in &);
-            struct sockaddr_in &getAddress();
+            struct sockaddr_in &getAddress() const;
             std::string getIpAddress();
             bool connect(struct sockaddr *addr, socklen_t adr_sz);
             bool bind(struct sockaddr *addr, socklen_t adr_sz);
@@ -37,6 +42,9 @@ namespace Network
             
             SignedSize recv(void *buf, size_t buf_len, int msgtype);
             SignedSize send(void *buf, size_t buf_len, int msgtype);
+            
+            SignedSize write(void *buf, size_t buf_len);
+            SignedSize read(void *buf, size_t buf_len);
 
             void setNonblockSocket(bool);
             bool isNonblockSocket();
@@ -48,6 +56,8 @@ namespace Network
                 
                 return new_sock;
             }
+
+            
 
         protected:
             struct sockaddr_in _addr_info;

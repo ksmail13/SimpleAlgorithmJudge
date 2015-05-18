@@ -40,6 +40,16 @@ SignedSize Network::BasicSocket::send(void *buf, size_t buf_len, int msgtype)
     return ::send(_fd, buf, buf_len, msgtype);
 }
 
+SignedSize Network::BasicSocket::write(void *buf, size_t buf_len)
+{
+    return ::write(_fd, buf, buf_len);
+}
+
+SignedSize Network::BasicSocket::read(void *buf, size_t buf_len)
+{
+    return ::read(_fd, buf, buf_len);
+}
+
 Network::BasicSocket Network::BasicSocket::accept() 
 {
      struct sockaddr_in clnt_adr;
