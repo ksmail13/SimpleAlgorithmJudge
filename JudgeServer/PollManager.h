@@ -5,6 +5,13 @@
 #include <vector>
 #include "InetSocket.h"
 
+class PollHandler
+{
+    virtual void onRead(int fd) = 0;
+    virtual void onWrite(int fd) = 0;
+    virtual void onError(int fd) = 0;
+};
+
 typedef int EpollDescriptor;
 class PollManager
 {
@@ -13,7 +20,7 @@ class PollManager
         void init(PollHandler &handler, bool isEdge=false);
         bool addEvent(int fd, int events);
         bool removeEvent(int fd);
-        void wait(int timeout);
+        void polling(int timeout);
 
     private:
         EpollDescriptor _ed;
@@ -23,12 +30,6 @@ class PollManager
     friend class InetSocket;
 };
 
-class PollHandler
-{
-    virtual void onRead(int fd) = 0;
-    virtual void onWrite(int fd) = 0;
-    virtual void onError(int fd) = 0;
-};
 
 
 #endif

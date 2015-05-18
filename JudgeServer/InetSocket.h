@@ -1,3 +1,5 @@
+#ifndef INETSOCKET_H
+#define INETSOCKET_H
 #include "BasicSocket.h"
 
 namespace Network
@@ -15,3 +17,4 @@ namespace Network
     };
 
 };
+#endif

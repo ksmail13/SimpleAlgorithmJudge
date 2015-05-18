@@ -10,7 +10,8 @@ void ServerSocket::init(int port)
     addr.sin_port = htons(port);
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-    this->socket.bind((struct sockaddr*)&addr, sizeof(addr));
+    this->_socket.bind((struct sockaddr*)&addr, sizeof(addr));
+    this->_socket.listen(5);
 }
 
 InetSocket ServerSocket::accept()
@@ -18,7 +19,7 @@ InetSocket ServerSocket::accept()
     InetSocket clnt;
     struct sockaddr_in clnt_adr;
     socklen_t adr_sz;
-    clnt = ::accept(socket._fd, (struct sockaddr*)&clnt_adr, &adr_sz); 
+    clnt = _socket.accept((struct sockaddr*)&clnt_adr, &adr_sz); 
     clnt.setAddress(clnt_adr);
     
     return clnt;

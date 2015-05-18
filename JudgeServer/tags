@@ -7,28 +7,72 @@
 BASICSOCKET_H	BasicSocket.h	2;"	d
 BaseLogMessage	logger.h	6;"	d
 BasicSocket	BasicSocket.h	/^            BasicSocket(int fd):_fd(fd){};$/;"	f	class:Network::BasicSocket
-BasicSocket	BasicSocket.h	/^            BasicSocket(int socktype, int proto_type):_fd(socket(PF_INET, socktype, proto_type)), _nonblock(false){}$/;"	f	class:Network::BasicSocket
+BasicSocket	BasicSocket.h	/^            BasicSocket(int proto_fam, int socktype, int proto_type):$/;"	f	class:Network::BasicSocket
 BasicSocket	BasicSocket.h	/^    class BasicSocket {$/;"	c	namespace:Network
+COMPILER	Makefile	/^COMPILER = g++$/;"	m
+COMPILE_FLAG	Makefile	/^COMPILE_FLAG = -std=c++11$/;"	m
+EpollDescriptor	PollManager.h	/^typedef int EpollDescriptor;$/;"	t
 ErrorMessage	logger.h	10;"	d
 FileDescriptor	BasicSocket.h	/^typedef int FileDescriptor;$/;"	t
+InetSocket	InetSocket.h	/^            InetSocket(int socktype, int proto_type):$/;"	f	class:Network::InetSocket
+InetSocket	InetSocket.h	/^    class InetSocket : public BasicSocket$/;"	c	namespace:Network
 InformMessage	logger.h	8;"	d
+JudgeServer	main.cc	/^        JudgeServer() {_pm.init(*this);}$/;"	f	class:JudgeServer	file:
+JudgeServer	main.cc	/^class JudgeServer: public PollHandler$/;"	c	file:
 LOGGER_H	logger.h	2;"	d
+MAX_POLL	PollManager.h	/^        static const int MAX_POLL = 10000;$/;"	m	class:PollManager
 Network	BasicSocket.h	/^namespace Network$/;"	n
+Network	InetSocket.h	/^namespace Network$/;"	n
+Network	ServerSocket.h	/^namespace Network$/;"	n
+OBJ_DIR	Makefile	/^OBJ_DIR = .\/obj$/;"	m
+POLLMANAGER_H	PollManager.h	2;"	d
+PollHandler	PollManager.h	/^class PollHandler$/;"	c
+PollManager	PollManager.h	/^class PollManager$/;"	c
+SERVER_SOCKET_H	ServerSocket.h	2;"	d
+ServerSocket	ServerSocket.h	/^            ServerSocket(int port) {$/;"	f	class:Network::ServerSocket
+ServerSocket	ServerSocket.h	/^    class ServerSocket$/;"	c	namespace:Network
 SignedSize	BasicSocket.h	/^typedef ssize_t SignedSize;$/;"	t
 _addr_info	BasicSocket.h	/^            struct sockaddr_in _addr_info;$/;"	m	class:Network::BasicSocket	typeref:struct:Network::BasicSocket::sockaddr_in
 _buf	BasicSocket.h	/^            char *_buf;$/;"	m	class:Network::BasicSocket
+_conn	main.cc	/^        vector<BasicSocket> _conn;$/;"	m	class:JudgeServer	file:
+_ed	PollManager.h	/^        EpollDescriptor _ed;$/;"	m	class:PollManager
 _fd	BasicSocket.h	/^            FileDescriptor _fd;$/;"	m	class:Network::BasicSocket
+_handler	PollManager.h	/^        PollHandler *_handler;$/;"	m	class:PollManager
 _nonblock	BasicSocket.h	/^            bool _nonblock;$/;"	m	class:Network::BasicSocket
+_pm	main.cc	/^        PollManager _pm;$/;"	m	class:JudgeServer	file:
+_serv	main.cc	/^        ServerSocket _serv;$/;"	m	class:JudgeServer	file:
+_socket	ServerSocket.h	/^            InetSocket _socket;$/;"	m	class:Network::ServerSocket
 accept	BasicSocket.cc	/^Network::BasicSocket Network::BasicSocket::accept() $/;"	f	class:Network::BasicSocket
+accept	ServerSocket.cc	/^InetSocket ServerSocket::accept()$/;"	f	class:ServerSocket
+addEvent	PollManager.cc	/^bool PollManager::addEvent(int fd, int events = EPOLLIN)$/;"	f	class:PollManager
 bind	BasicSocket.cc	/^bool Network::BasicSocket::bind(struct sockaddr *addr, socklen_t adr_sz)$/;"	f	class:Network::BasicSocket
+close	BasicSocket.h	/^            void close() {::close(_fd);}$/;"	f	class:Network::BasicSocket
 connect	BasicSocket.cc	/^bool Network::BasicSocket::connect(struct sockaddr *addr, socklen_t adr_sz)$/;"	f	class:Network::BasicSocket
+createNewConnection	main.cc	/^void JudgeServer::createNewConnection()$/;"	f	class:JudgeServer
+getFileDescriptor	BasicSocket.h	/^            FileDescriptor getFileDescriptor() const {$/;"	f	class:Network::BasicSocket
+getFileDescriptor	ServerSocket.h	/^            FileDescriptor getFileDescriptor() const {$/;"	f	class:Network::ServerSocket
+getInstance	main.cc	/^        JudgeServer *getInstance() {$/;"	f	class:JudgeServer
 getIpAddress	BasicSocket.cc	/^std::string Network::BasicSocket::getIpAddress() $/;"	f	class:Network::BasicSocket
+init	PollManager.cc	/^void PollManager::init(PollHandler &handler, bool isEdge = false)$/;"	f	class:PollManager
+init	ServerSocket.cc	/^void ServerSocket::init(int port)$/;"	f	class:ServerSocket
+instance	main.cc	/^        static JudgeServer *instance;$/;"	m	class:JudgeServer	file:
 isNonblockSocket	BasicSocket.cc	/^bool Network::BasicSocket::isNonblockSocket()$/;"	f	class:Network::BasicSocket
 listen	BasicSocket.cc	/^bool Network::BasicSocket::listen(int backlog)$/;"	f	class:Network::BasicSocket
-main	main.cc	/^int main()$/;"	f
-operator =	BasicSocket.h	/^            BasicSocket operator= (const FileDescriptor &fd) {$/;"	f	class:Network::BasicSocket
+main	main.cc	/^int main(int argc, const char *argv[])$/;"	f
+onError	main.cc	/^void JudgeServer::onError(int fd)$/;"	f	class:JudgeServer
+onEvent	PollManager.cc	/^void PollManager::onEvent(const struct epoll_event &event)$/;"	f	class:PollManager
+onRead	main.cc	/^void JudgeServer::onRead(int fd)$/;"	f	class:JudgeServer
+onWrite	main.cc	/^void JudgeServer::onWrite(int fd)$/;"	f	class:JudgeServer
+operator =	BasicSocket.h	/^            virtual BasicSocket operator= (const FileDescriptor &fd) {$/;"	f	class:Network::BasicSocket
+polling	PollManager.cc	/^void PollManager::polling(int timeout)$/;"	f	class:PollManager
+read	BasicSocket.cc	/^SignedSize Network::BasicSocket::read(void *buf, size_t buf_len)$/;"	f	class:Network::BasicSocket
+receiveData	main.cc	/^void JudgeServer::receiveData(int fd)$/;"	f	class:JudgeServer
 recv	BasicSocket.cc	/^SignedSize Network::BasicSocket::recv(void *buf, size_t buf_len, int msgtype)$/;"	f	class:Network::BasicSocket
+removeEvent	PollManager.cc	/^bool PollManager::removeEvent(int fd)$/;"	f	class:PollManager
+run	main.cc	/^void JudgeServer::run(int port)$/;"	f	class:JudgeServer
 send	BasicSocket.cc	/^SignedSize Network::BasicSocket::send(void *buf, size_t buf_len, int msgtype)$/;"	f	class:Network::BasicSocket
 setAddress	BasicSocket.cc	/^void Network::BasicSocket::setAddress(struct sockaddr_in &addr)$/;"	f	class:Network::BasicSocket
 setNonblockSocket	BasicSocket.cc	/^void Network::BasicSocket::setNonblockSocket(bool accept)$/;"	f	class:Network::BasicSocket
-~BasicSocket	BasicSocket.h	/^            ~BasicSocket(){}$/;"	f	class:Network::BasicSocket
+write	BasicSocket.cc	/^SignedSize Network::BasicSocket::write(void *buf, size_t buf_len)$/;"	f	class:Network::BasicSocket
+~BasicSocket	BasicSocket.h	/^            virtual ~BasicSocket(){this->close();};$/;"	f	class:Network::BasicSocket
+~InetSocket	InetSocket.h	/^            virtual ~InetSocket() {}$/;"	f	class:Network::InetSocket
