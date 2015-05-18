@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     loginwindow.cpp \
     mainwidget.cpp \
     socketmanager.cpp \
-    BasicSocket.cc
+    BasicSocket.cc \
+    jsoncpp.cpp
 
 HEADERS  += \
     loginwidget.h \
@@ -26,7 +27,9 @@ HEADERS  += \
     InetSocket.h \
     BasicSocket.h \
     socketmanager.h \
-    logger.h
+    logger.h \
+    json-forwards.h \
+    json.h
 
 FORMS    += \
     loginwindow.ui

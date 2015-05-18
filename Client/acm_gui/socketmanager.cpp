@@ -8,8 +8,6 @@ SocketManager::SocketManager()
     _socket = new InetSocket(SOCK_STREAM, 0);
 
 
-
-
 }
 
 bool SocketManager::setIP(QString ip)
@@ -33,6 +31,11 @@ void SocketManager::send(QString str)
     sprintf(buf, "%s", str.toStdString().c_str());
 
     _socket->send(buf, len, 0);
+}
+
+void SocketManager::close()
+{
+    _socket->close();
 }
 
 SocketManager::~SocketManager()

@@ -7,6 +7,7 @@
 #include <QLineEdit>
 #include <QGroupBox>
 #include <QString>
+#include "json.h"
 
 //#include <QtGui>
 

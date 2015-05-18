@@ -20,6 +20,7 @@ public:
 
     bool setIP(QString ip);
     void send(QString str);
+    void close();
 
 };
 

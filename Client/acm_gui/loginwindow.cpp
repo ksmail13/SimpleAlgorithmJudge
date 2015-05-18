@@ -90,6 +90,9 @@ void LoginWindow::logOut()
 {
     this->takeCentralWidget();
 
+    //close socket
+    socket_manager->close();
+
     setWindowTitle("Login");
     widget_login = new LoginWidget;
     connect(widget_login->button_help, SIGNAL(clicked()), this, SLOT(helpBox()));
