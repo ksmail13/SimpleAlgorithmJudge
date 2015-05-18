@@ -32,10 +32,9 @@ void SocketManager::send(Json::Value &root)
     Json::StyledWriter writer;
     string output = writer.write(root);
 
-
     len = output.length();
-    //buf = output.c_str(); //type const void*
     sprintf(buf, "%s", root.toStyledString().c_str());
+    //buf = output.c_str(); //type const void*
 
     _socket->send(buf, len, 0);
 }
