@@ -3,6 +3,8 @@
 
 #include "InetSocket.h"
 #include <QString>
+#include "json.h"
+#include <cstring>
 
 using namespace Network;
 
@@ -19,7 +21,7 @@ public:
     const u_int16_t port = 54321;
 
     bool setIP(QString ip);
-    void send(QString str);
+    void send(Json::Value &root);
     void close();
 
 };

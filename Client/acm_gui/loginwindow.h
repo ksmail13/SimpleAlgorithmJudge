@@ -5,6 +5,7 @@
 #include "loginwidget.h"
 #include "mainwidget.h"
 #include "socketmanager.h"
+#include "json.h"
 
 /*
 namespace Ui {

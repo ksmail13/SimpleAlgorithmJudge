@@ -55,8 +55,13 @@ void LoginWindow::sendLoginInfo()
         else
         {
             str = QString("id : %1\npw : %2\nip : %3").arg(id, pw, ip);
+            Json::Value root;
+            Json::Value ID;
+            root["ID"] = id.toStdString().c_str();
+            Json::Value PW;
+            root["PW"] = pw.toStdString().c_str();
 
-            socket_manager->send(str);
+            socket_manager->send(root);
             newWidget();
         }
     }

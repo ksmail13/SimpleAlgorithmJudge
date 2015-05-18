@@ -1,12 +1,11 @@
 #include "socketmanager.h"
-#include <cstring>
 #include <stdio.h>
+
+using namespace std;
 
 SocketManager::SocketManager()
 {
-
     _socket = new InetSocket(SOCK_STREAM, 0);
-
 
 }
 
@@ -22,13 +21,21 @@ bool SocketManager::setIP(QString ip)
     return ret;
 }
 
-void SocketManager::send(QString str)
+void SocketManager::send(Json::Value &root)
 {
+
     size_t len;
-    len = str.size();
+    //len = str.size();
+
     char buf[100] = {0,};
 
-    sprintf(buf, "%s", str.toStdString().c_str());
+    Json::StyledWriter writer;
+    string output = writer.write(root);
+
+
+    len = output.length();
+    //buf = output.c_str(); //type const void*
+    sprintf(buf, "%s", root.toStyledString().c_str());
 
     _socket->send(buf, len, 0);
 }
