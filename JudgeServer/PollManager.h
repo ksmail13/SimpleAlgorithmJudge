@@ -7,12 +7,14 @@
 
 class PollHandler
 {
+public :
     virtual void onRead(int fd) = 0;
     virtual void onWrite(int fd) = 0;
     virtual void onError(int fd) = 0;
 };
 
 typedef int EpollDescriptor;
+
 class PollManager
 {
     public:

@@ -2,7 +2,7 @@
 #define SERVER_SOCKET_H
 
 #include "BasicSocket.h"
-
+#include "InetSocket.h"
 namespace Network
 {
     class ServerSocket
@@ -11,7 +11,7 @@ namespace Network
             InetSocket _socket;
             void init(int port);
         public:
-            InetSocket accept();
+            InetSocket *accept();
             ServerSocket(int port): _socket(SOCK_STREAM, 0){
                this->init(port);
             }

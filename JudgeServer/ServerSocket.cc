@@ -1,5 +1,5 @@
 #include "ServerSocket.h"
-
+#include <cstring>
 using namespace Network;
 
 void ServerSocket::init(int port)
@@ -14,13 +14,7 @@ void ServerSocket::init(int port)
     this->_socket.listen(5);
 }
 
-InetSocket ServerSocket::accept()
+InetSocket *ServerSocket::accept()
 {
-    InetSocket clnt;
-    struct sockaddr_in clnt_adr;
-    socklen_t adr_sz;
-    clnt = _socket.accept((struct sockaddr*)&clnt_adr, &adr_sz); 
-    clnt.setAddress(clnt_adr);
-    
-    return clnt;
+    return dynamic_cast<InetSocket *>(_socket.accept());
 }

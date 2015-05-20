@@ -1,7 +1,8 @@
+#include <iostream>
 #include "BasicSocket.h"
 #include "logger.h"
 
-std::string Network::BasicSocket::getIpAddress() 
+std::string Network::BasicSocket::getIpAddress()
 {
     std::string s;
     s = inet_ntoa(_addr_info.sin_addr);
@@ -50,16 +51,17 @@ SignedSize Network::BasicSocket::read(void *buf, size_t buf_len)
     return ::read(_fd, buf, buf_len);
 }
 
-Network::BasicSocket Network::BasicSocket::accept() 
+Network::BasicSocket *Network::BasicSocket::accept()
 {
-     struct sockaddr_in clnt_adr;
-     socklen_t adr_sz = sizeof(clnt_adr);
-     
-     int clnt_sock = ::accept(_fd, (struct sockaddr*) &clnt_adr, &adr_sz);
-     BasicSocket new_clnt	= clnt_sock;
-     new_clnt.setAddress(clnt_adr);
-     
-     return new_clnt;
+    BasicSocket *new_clnt = nullptr;
+    struct sockaddr_in clnt_adr;
+    socklen_t adr_sz = sizeof(clnt_adr);
+
+    int clnt_sock = ::accept(_fd, (struct sockaddr*) &clnt_adr, &adr_sz);
+    new_clnt = new BasicSocket(clnt_sock);
+    new_clnt->setAddress(clnt_adr);
+
+    return new_clnt;
 }
 
 void Network::BasicSocket::setNonblockSocket(bool accept)
@@ -69,13 +71,13 @@ void Network::BasicSocket::setNonblockSocket(bool accept)
         flag = flag|O_NONBLOCK;
     }
     else {
-        flag = flag^O_NONBLOCK;    
+        flag = flag^O_NONBLOCK;
     }
     fcntl(_fd, F_SETFL, flag);
 }
 
 bool Network::BasicSocket::isNonblockSocket()
 {
-    return _nonblock;   
+    return _nonblock;
 }
 
