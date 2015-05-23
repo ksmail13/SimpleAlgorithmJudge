@@ -4,75 +4,131 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	JudgeServer.mk	/^AR       := \/usr\/bin\/ar rcu$/;"	m
+AS	JudgeServer.mk	/^AS       := \/usr\/bin\/as$/;"	m
+ASFLAGS	JudgeServer.mk	/^ASFLAGS  := $/;"	m
+ArLibs	JudgeServer.mk	/^ArLibs                 :=  $/;"	m
+ArchiveOutputSwitch	JudgeServer.mk	/^ArchiveOutputSwitch    := $/;"	m
 BASICSOCKET_H	BasicSocket.h	2;"	d
-BaseLogMessage	logger.h	6;"	d
+BaseLogMessage	logger.h	14;"	d
+BasicSocket	BasicSocket.h	/^            BasicSocket():_fd(-1), _nonblock(false) {};$/;"	f	class:Network::BasicSocket
 BasicSocket	BasicSocket.h	/^            BasicSocket(int fd):_fd(fd){};$/;"	f	class:Network::BasicSocket
 BasicSocket	BasicSocket.h	/^            BasicSocket(int proto_fam, int socktype, int proto_type):$/;"	f	class:Network::BasicSocket
 BasicSocket	BasicSocket.h	/^    class BasicSocket {$/;"	c	namespace:Network
-COMPILER	Makefile	/^COMPILER = g++$/;"	m
-COMPILE_FLAG	Makefile	/^COMPILE_FLAG = -std=c++11$/;"	m
+CC	JudgeServer.mk	/^CC       := \/usr\/bin\/gcc$/;"	m
+CFLAGS	JudgeServer.mk	/^CFLAGS   :=  -g -O0 -Wall $(Preprocessors)$/;"	m
+CXX	JudgeServer.mk	/^CXX      := \/usr\/bin\/g++$/;"	m
+CXXFLAGS	JudgeServer.mk	/^CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)$/;"	m
+CodeLiteDir	JudgeServer.mk	/^CodeLiteDir:=\/usr\/share\/codelite$/;"	m
+CodeLitePath	JudgeServer.mk	/^CodeLitePath           :="\/home\/micky\/.codelite"$/;"	m
+ConfigurationName	JudgeServer.mk	/^ConfigurationName      :=Debug$/;"	m
+CurrentFileFullPath	JudgeServer.mk	/^CurrentFileFullPath    :=$/;"	m
+CurrentFileName	JudgeServer.mk	/^CurrentFileName        :=$/;"	m
+CurrentFilePath	JudgeServer.mk	/^CurrentFilePath        :=$/;"	m
+Date	JudgeServer.mk	/^Date                   :=20\/05\/15$/;"	m
+DebugSwitch	JudgeServer.mk	/^DebugSwitch            :=-g $/;"	m
+DependSuffix	JudgeServer.mk	/^DependSuffix           :=.o.d$/;"	m
 EpollDescriptor	PollManager.h	/^typedef int EpollDescriptor;$/;"	t
-ErrorMessage	logger.h	10;"	d
+ErrorMessage	logger.h	19;"	d
 FileDescriptor	BasicSocket.h	/^typedef int FileDescriptor;$/;"	t
+INETSOCKET_H	InetSocket.h	2;"	d
+IncludePCH	JudgeServer.mk	/^IncludePCH             := $/;"	m
+IncludePath	JudgeServer.mk	/^IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $/;"	m
+IncludeSwitch	JudgeServer.mk	/^IncludeSwitch          :=-I$/;"	m
+InetSocket	InetSocket.h	/^            InetSocket() {}$/;"	f	class:Network::InetSocket
+InetSocket	InetSocket.h	/^            InetSocket(FileDescriptor fd) : BasicSocket(fd) {}$/;"	f	class:Network::InetSocket
 InetSocket	InetSocket.h	/^            InetSocket(int socktype, int proto_type):$/;"	f	class:Network::InetSocket
 InetSocket	InetSocket.h	/^    class InetSocket : public BasicSocket$/;"	c	namespace:Network
-InformMessage	logger.h	8;"	d
-JudgeServer	main.cc	/^        JudgeServer() {_pm.init(*this);}$/;"	f	class:JudgeServer	file:
-JudgeServer	main.cc	/^class JudgeServer: public PollHandler$/;"	c	file:
+InformMessage	logger.h	17;"	d
+IntermediateDirectory	JudgeServer.mk	/^IntermediateDirectory  :=.\/Debug$/;"	m
+JUDGESERVER_JUDGESERVER_H	JudgeServer.h	6;"	d
+JudgeServer	JudgeServer.h	/^    JudgeServer():_serv(PORT) { _pm.init(*this); }$/;"	f	class:JudgeServer
+JudgeServer	JudgeServer.h	/^class JudgeServer: public PollHandler$/;"	c
 LOGGER_H	logger.h	2;"	d
+LibPath	JudgeServer.mk	/^LibPath                := $(LibraryPathSwitch). $/;"	m
+LibraryPathSwitch	JudgeServer.mk	/^LibraryPathSwitch      :=-L$/;"	m
+LibrarySwitch	JudgeServer.mk	/^LibrarySwitch          :=-l$/;"	m
+Libs	JudgeServer.mk	/^Libs                   := $/;"	m
+LinkOptions	JudgeServer.mk	/^LinkOptions            :=  $/;"	m
+LinkerName	JudgeServer.mk	/^LinkerName             :=\/usr\/bin\/g++$/;"	m
 MAX_POLL	PollManager.h	/^        static const int MAX_POLL = 10000;$/;"	m	class:PollManager
+MakeDirCommand	JudgeServer.mk	/^MakeDirCommand         :=mkdir -p$/;"	m
 Network	BasicSocket.h	/^namespace Network$/;"	n
 Network	InetSocket.h	/^namespace Network$/;"	n
 Network	ServerSocket.h	/^namespace Network$/;"	n
-OBJ_DIR	Makefile	/^OBJ_DIR = .\/obj$/;"	m
+ObjectSuffix	JudgeServer.mk	/^ObjectSuffix           :=.o$/;"	m
+ObjectSwitch	JudgeServer.mk	/^ObjectSwitch           :=-o $/;"	m
+Objects	JudgeServer.mk	/^Objects=$(Objects0) $/;"	m
+Objects0	JudgeServer.mk	/^Objects0=$(IntermediateDirectory)\/BasicSocket.cc$(ObjectSuffix) $(IntermediateDirectory)\/main.cc$(ObjectSuffix) $(IntermediateDirectory)\/PollManager.cc$(ObjectSuffix) $(IntermediateDirectory)\/ServerSocket.cc$(ObjectSuffix) $/;"	m
+ObjectsFileList	JudgeServer.mk	/^ObjectsFileList        :="JudgeServer.txt"$/;"	m
+OutDir	JudgeServer.mk	/^OutDir                 := $(IntermediateDirectory)$/;"	m
+OutputFile	JudgeServer.mk	/^OutputFile             :=$(IntermediateDirectory)\/$(ProjectName)$/;"	m
+OutputSwitch	JudgeServer.mk	/^OutputSwitch           :=-o $/;"	m
+PCHCompileFlags	JudgeServer.mk	/^PCHCompileFlags        :=$/;"	m
 POLLMANAGER_H	PollManager.h	2;"	d
+PORT	JudgeServer.h	/^    const static int PORT = 54321;$/;"	m	class:JudgeServer
 PollHandler	PollManager.h	/^class PollHandler$/;"	c
 PollManager	PollManager.h	/^class PollManager$/;"	c
+PreprocessOnlySwitch	JudgeServer.mk	/^PreprocessOnlySwitch   :=-E$/;"	m
+PreprocessSuffix	JudgeServer.mk	/^PreprocessSuffix       :=.i$/;"	m
+PreprocessorSwitch	JudgeServer.mk	/^PreprocessorSwitch     :=-D$/;"	m
+Preprocessors	JudgeServer.mk	/^Preprocessors          :=$/;"	m
+ProjectName	JudgeServer.mk	/^ProjectName            :=JudgeServer$/;"	m
+ProjectPath	JudgeServer.mk	/^ProjectPath            := "\/home\/micky\/Documents\/Coding\/SimpleAlgorithmJudge\/JudgeServer"$/;"	m
+RcIncludePath	JudgeServer.mk	/^RcIncludePath          := $/;"	m
 SERVER_SOCKET_H	ServerSocket.h	2;"	d
-ServerSocket	ServerSocket.h	/^            ServerSocket(int port) {$/;"	f	class:Network::ServerSocket
+ServerSocket	ServerSocket.h	/^            ServerSocket(int port): _socket(SOCK_STREAM, 0){$/;"	f	class:Network::ServerSocket
 ServerSocket	ServerSocket.h	/^    class ServerSocket$/;"	c	namespace:Network
+SharedObjectLinkerName	JudgeServer.mk	/^SharedObjectLinkerName :=\/usr\/bin\/g++ -shared -fPIC$/;"	m
 SignedSize	BasicSocket.h	/^typedef ssize_t SignedSize;$/;"	t
+SourceSwitch	JudgeServer.mk	/^SourceSwitch           :=-c $/;"	m
+User	JudgeServer.mk	/^User                   :=micky$/;"	m
+WorkspacePath	JudgeServer.mk	/^WorkspacePath          := "\/home\/micky\/Documents\/Coding\/SimpleAlgorithmJudge\/JudgeServer"$/;"	m
 _addr_info	BasicSocket.h	/^            struct sockaddr_in _addr_info;$/;"	m	class:Network::BasicSocket	typeref:struct:Network::BasicSocket::sockaddr_in
 _buf	BasicSocket.h	/^            char *_buf;$/;"	m	class:Network::BasicSocket
-_conn	main.cc	/^        vector<BasicSocket> _conn;$/;"	m	class:JudgeServer	file:
+_conn	JudgeServer.h	/^    std::vector<InetSocket *> _conn;$/;"	m	class:JudgeServer
 _ed	PollManager.h	/^        EpollDescriptor _ed;$/;"	m	class:PollManager
 _fd	BasicSocket.h	/^            FileDescriptor _fd;$/;"	m	class:Network::BasicSocket
 _handler	PollManager.h	/^        PollHandler *_handler;$/;"	m	class:PollManager
 _nonblock	BasicSocket.h	/^            bool _nonblock;$/;"	m	class:Network::BasicSocket
-_pm	main.cc	/^        PollManager _pm;$/;"	m	class:JudgeServer	file:
-_serv	main.cc	/^        ServerSocket _serv;$/;"	m	class:JudgeServer	file:
+_pm	JudgeServer.h	/^    PollManager _pm;$/;"	m	class:JudgeServer
+_serv	JudgeServer.h	/^    ServerSocket _serv;$/;"	m	class:JudgeServer
 _socket	ServerSocket.h	/^            InetSocket _socket;$/;"	m	class:Network::ServerSocket
-accept	BasicSocket.cc	/^Network::BasicSocket Network::BasicSocket::accept() $/;"	f	class:Network::BasicSocket
-accept	ServerSocket.cc	/^InetSocket ServerSocket::accept()$/;"	f	class:ServerSocket
+accept	BasicSocket.cc	/^Network::BasicSocket *Network::BasicSocket::accept()$/;"	f	class:Network::BasicSocket
+accept	InetSocket.cc	/^BasicSocket *InetSocket::accept()$/;"	f	class:InetSocket
+accept	ServerSocket.cc	/^InetSocket *ServerSocket::accept()$/;"	f	class:ServerSocket
 addEvent	PollManager.cc	/^bool PollManager::addEvent(int fd, int events = EPOLLIN)$/;"	f	class:PollManager
 bind	BasicSocket.cc	/^bool Network::BasicSocket::bind(struct sockaddr *addr, socklen_t adr_sz)$/;"	f	class:Network::BasicSocket
 close	BasicSocket.h	/^            void close() {::close(_fd);}$/;"	f	class:Network::BasicSocket
 connect	BasicSocket.cc	/^bool Network::BasicSocket::connect(struct sockaddr *addr, socklen_t adr_sz)$/;"	f	class:Network::BasicSocket
-createNewConnection	main.cc	/^void JudgeServer::createNewConnection()$/;"	f	class:JudgeServer
+createNewConnection	JudgeServer.cpp	/^void JudgeServer::createNewConnection()$/;"	f	class:JudgeServer
 getFileDescriptor	BasicSocket.h	/^            FileDescriptor getFileDescriptor() const {$/;"	f	class:Network::BasicSocket
 getFileDescriptor	ServerSocket.h	/^            FileDescriptor getFileDescriptor() const {$/;"	f	class:Network::ServerSocket
-getInstance	main.cc	/^        JudgeServer *getInstance() {$/;"	f	class:JudgeServer
-getIpAddress	BasicSocket.cc	/^std::string Network::BasicSocket::getIpAddress() $/;"	f	class:Network::BasicSocket
-init	PollManager.cc	/^void PollManager::init(PollHandler &handler, bool isEdge = false)$/;"	f	class:PollManager
+getInstance	JudgeServer.h	/^    static JudgeServer *getInstance() {$/;"	f	class:JudgeServer
+getIpAddress	BasicSocket.cc	/^std::string Network::BasicSocket::getIpAddress()$/;"	f	class:Network::BasicSocket
+init	PollManager.cc	/^void PollManager::init(PollHandler &handler, bool isEdge)$/;"	f	class:PollManager
 init	ServerSocket.cc	/^void ServerSocket::init(int port)$/;"	f	class:ServerSocket
-instance	main.cc	/^        static JudgeServer *instance;$/;"	m	class:JudgeServer	file:
+instance	JudgeServer.cpp	/^JudgeServer *JudgeServer::instance;$/;"	m	class:JudgeServer	file:
+instance	JudgeServer.h	/^    static JudgeServer *instance;$/;"	m	class:JudgeServer
 isNonblockSocket	BasicSocket.cc	/^bool Network::BasicSocket::isNonblockSocket()$/;"	f	class:Network::BasicSocket
 listen	BasicSocket.cc	/^bool Network::BasicSocket::listen(int backlog)$/;"	f	class:Network::BasicSocket
 main	main.cc	/^int main(int argc, const char *argv[])$/;"	f
-onError	main.cc	/^void JudgeServer::onError(int fd)$/;"	f	class:JudgeServer
+onError	JudgeServer.h	/^    virtual void onError(int fd) {}$/;"	f	class:JudgeServer
 onEvent	PollManager.cc	/^void PollManager::onEvent(const struct epoll_event &event)$/;"	f	class:PollManager
-onRead	main.cc	/^void JudgeServer::onRead(int fd)$/;"	f	class:JudgeServer
-onWrite	main.cc	/^void JudgeServer::onWrite(int fd)$/;"	f	class:JudgeServer
+onRead	JudgeServer.cpp	/^void JudgeServer::onRead(int fd)$/;"	f	class:JudgeServer
+onWrite	JudgeServer.h	/^    virtual void onWrite(int fd) {}$/;"	f	class:JudgeServer
 operator =	BasicSocket.h	/^            virtual BasicSocket operator= (const FileDescriptor &fd) {$/;"	f	class:Network::BasicSocket
+operator =	InetSocket.h	/^            virtual BasicSocket operator= (const FileDescriptor &fd) {$/;"	f	class:Network::InetSocket
 polling	PollManager.cc	/^void PollManager::polling(int timeout)$/;"	f	class:PollManager
 read	BasicSocket.cc	/^SignedSize Network::BasicSocket::read(void *buf, size_t buf_len)$/;"	f	class:Network::BasicSocket
-receiveData	main.cc	/^void JudgeServer::receiveData(int fd)$/;"	f	class:JudgeServer
+receiveData	JudgeServer.cpp	/^void JudgeServer::receiveData(int fd)$/;"	f	class:JudgeServer
 recv	BasicSocket.cc	/^SignedSize Network::BasicSocket::recv(void *buf, size_t buf_len, int msgtype)$/;"	f	class:Network::BasicSocket
+removeConnection	JudgeServer.cpp	/^void JudgeServer::removeConnection(InetSocket *sock)$/;"	f	class:JudgeServer
 removeEvent	PollManager.cc	/^bool PollManager::removeEvent(int fd)$/;"	f	class:PollManager
-run	main.cc	/^void JudgeServer::run(int port)$/;"	f	class:JudgeServer
+run	JudgeServer.cpp	/^void JudgeServer::run()$/;"	f	class:JudgeServer
 send	BasicSocket.cc	/^SignedSize Network::BasicSocket::send(void *buf, size_t buf_len, int msgtype)$/;"	f	class:Network::BasicSocket
 setAddress	BasicSocket.cc	/^void Network::BasicSocket::setAddress(struct sockaddr_in &addr)$/;"	f	class:Network::BasicSocket
 setNonblockSocket	BasicSocket.cc	/^void Network::BasicSocket::setNonblockSocket(bool accept)$/;"	f	class:Network::BasicSocket
 write	BasicSocket.cc	/^SignedSize Network::BasicSocket::write(void *buf, size_t buf_len)$/;"	f	class:Network::BasicSocket
-~BasicSocket	BasicSocket.h	/^            virtual ~BasicSocket(){this->close();};$/;"	f	class:Network::BasicSocket
 ~InetSocket	InetSocket.h	/^            virtual ~InetSocket() {}$/;"	f	class:Network::InetSocket
+~JudgeServer	JudgeServer.h	/^    ~JudgeServer() {}$/;"	f	class:JudgeServer

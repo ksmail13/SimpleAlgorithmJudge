@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/JudgeServer.dir/BasicSocket.cc.o CMakeFiles/JudgeServer.dir/PollManager.cc.o CMakeFiles/JudgeServer.dir/ServerSocket.cc.o CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o CMakeFiles/JudgeServer.dir/main.cc.o  -o JudgeServer -rdynamic 

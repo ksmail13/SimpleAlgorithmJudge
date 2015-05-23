@@ -11,7 +11,7 @@ include_directories(
 )
 
 # Linker options
-set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS}  ")
+set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS}  -lpthread")
 
 # Library path
 set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" ")
@@ -19,14 +19,17 @@ set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" ")
 # Define the CXX sources
 set ( CXX_SRCS
     BasicSocket.cc
-    main.cc
     PollManager.cc
     ServerSocket.cc
+    JudgeServer.cpp
 )
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_REENTRANT")
 
 set_source_files_properties(
     ${CXX_SRCS} PROPERTIES COMPILE_FLAGS 
-    " -g -O0 -Wall --std=c++11")
+    " -g -O0 -Wall")
 
-add_executable(JudgeServer ${CXX_SRCS} ${C_SRCS})
+add_executable(JudgeServer ${CXX_SRCS} ${C_SRCS}
+    main.cc Judge.cpp Judge.h Thread.cpp Thread.h SemaphoreObejct.cpp SemaphoreObejct.h  Grading.cpp Grading.h)
 
