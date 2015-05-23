@@ -4,14 +4,15 @@
 
 #include "Thread.h"
 
+std::map<pthread_t, Thread::Thread *> Thread::Thread::_threads;
 
 Thread::Thread::Thread()
 { }
 
 
-void *thread_main(void *args)
+void *Thread::thread_main(void *args)
 {
-    Thread::Thread *thread = (Thread::Thread *)args;
+    Thread *thread = (Thread *)args;
     thread->run();
     thread->_running = false;
     return NULL;

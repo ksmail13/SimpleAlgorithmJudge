@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 2.8.11)
-
 project(JudgeServer)
 
 
@@ -11,16 +10,16 @@ include_directories(
 )
 
 # Linker options
-set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS}  -lpthread")
+set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} ")
 
 # Library path
-set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" ")
+set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\"")
 
 # Define the CXX sources
 set ( CXX_SRCS
-    BasicSocket.cc
-    PollManager.cc
-    ServerSocket.cc
+    BasicSocket.cpp
+    PollManager.cpp
+    ServerSocket.cpp
     JudgeServer.cpp
 )
 
@@ -28,8 +27,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_REENTRANT")
 
 set_source_files_properties(
     ${CXX_SRCS} PROPERTIES COMPILE_FLAGS 
-    " -g -O0 -Wall")
+    " -g -O0")
 
 add_executable(JudgeServer ${CXX_SRCS} ${C_SRCS}
-    main.cc Judge.cpp Judge.h Thread.cpp Thread.h SemaphoreObejct.cpp SemaphoreObejct.h  Grading.cpp Grading.h)
+    main.cpp Judge.cpp Judge.h Thread.cpp Thread.h SemaphoreObejct.cpp SemaphoreObejct.h  Grading.cpp Grading.h Timer.cpp Timer.h JudgeManager.cpp JudgeManager.h)
 
+# set_property(TARGET JudgeServer PROPERTY COMPILE_OPTIONS "-pthread")
+target_link_libraries(JudgeServer pthread)

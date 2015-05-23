@@ -19,18 +19,18 @@ class Judge : public Thread::Thread{
 private:
     SemaphoreObejct in, out;
     SemaphoreObejct mutex;
-    volatile std::vector<question> _q_list;
-    Judge();
-    ~Judge();
+    std::vector<question> _q_list;
 
     std::string createCode(const question &q) const;
     bool isCorrectCode(const std::string &code);
     inline question &getQuestion();
     inline void popQuestion();
 public:
-    void submit(struct question q);
-    int remain() const;
+    Judge();
+    ~Judge();
 
+    void submit(struct question q);
+    int remain();
     virtual void run();
 
 };

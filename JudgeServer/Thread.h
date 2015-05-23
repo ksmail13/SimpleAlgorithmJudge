@@ -12,6 +12,7 @@
 #include <map>
 
 namespace Thread{
+    void *thread_main(void *args);
 
     class Thread {
     private:

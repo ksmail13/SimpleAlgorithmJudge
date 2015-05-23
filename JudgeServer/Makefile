@@ -111,29 +111,77 @@ JudgeServer/fast:
 	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/build
 .PHONY : JudgeServer/fast
 
-BasicSocket.o: BasicSocket.cc.o
+BasicSocket.o: BasicSocket.cpp.o
 .PHONY : BasicSocket.o
 
 # target to build an object file
-BasicSocket.cc.o:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cc.o
-.PHONY : BasicSocket.cc.o
+BasicSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o
+.PHONY : BasicSocket.cpp.o
 
-BasicSocket.i: BasicSocket.cc.i
+BasicSocket.i: BasicSocket.cpp.i
 .PHONY : BasicSocket.i
 
 # target to preprocess a source file
-BasicSocket.cc.i:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cc.i
-.PHONY : BasicSocket.cc.i
+BasicSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cpp.i
+.PHONY : BasicSocket.cpp.i
 
-BasicSocket.s: BasicSocket.cc.s
+BasicSocket.s: BasicSocket.cpp.s
 .PHONY : BasicSocket.s
 
 # target to generate assembly for a file
-BasicSocket.cc.s:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cc.s
-.PHONY : BasicSocket.cc.s
+BasicSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cpp.s
+.PHONY : BasicSocket.cpp.s
+
+Grading.o: Grading.cpp.o
+.PHONY : Grading.o
+
+# target to build an object file
+Grading.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Grading.cpp.o
+.PHONY : Grading.cpp.o
+
+Grading.i: Grading.cpp.i
+.PHONY : Grading.i
+
+# target to preprocess a source file
+Grading.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Grading.cpp.i
+.PHONY : Grading.cpp.i
+
+Grading.s: Grading.cpp.s
+.PHONY : Grading.s
+
+# target to generate assembly for a file
+Grading.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Grading.cpp.s
+.PHONY : Grading.cpp.s
+
+Judge.o: Judge.cpp.o
+.PHONY : Judge.o
+
+# target to build an object file
+Judge.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Judge.cpp.o
+.PHONY : Judge.cpp.o
+
+Judge.i: Judge.cpp.i
+.PHONY : Judge.i
+
+# target to preprocess a source file
+Judge.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Judge.cpp.i
+.PHONY : Judge.cpp.i
+
+Judge.s: Judge.cpp.s
+.PHONY : Judge.s
+
+# target to generate assembly for a file
+Judge.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Judge.cpp.s
+.PHONY : Judge.cpp.s
 
 JudgeServer.o: JudgeServer.cpp.o
 .PHONY : JudgeServer.o
@@ -159,77 +207,125 @@ JudgeServer.cpp.s:
 	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/JudgeServer.cpp.s
 .PHONY : JudgeServer.cpp.s
 
-PollManager.o: PollManager.cc.o
+PollManager.o: PollManager.cpp.o
 .PHONY : PollManager.o
 
 # target to build an object file
-PollManager.cc.o:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cc.o
-.PHONY : PollManager.cc.o
+PollManager.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cpp.o
+.PHONY : PollManager.cpp.o
 
-PollManager.i: PollManager.cc.i
+PollManager.i: PollManager.cpp.i
 .PHONY : PollManager.i
 
 # target to preprocess a source file
-PollManager.cc.i:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cc.i
-.PHONY : PollManager.cc.i
+PollManager.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cpp.i
+.PHONY : PollManager.cpp.i
 
-PollManager.s: PollManager.cc.s
+PollManager.s: PollManager.cpp.s
 .PHONY : PollManager.s
 
 # target to generate assembly for a file
-PollManager.cc.s:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cc.s
-.PHONY : PollManager.cc.s
+PollManager.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cpp.s
+.PHONY : PollManager.cpp.s
 
-ServerSocket.o: ServerSocket.cc.o
+SemaphoreObejct.o: SemaphoreObejct.cpp.o
+.PHONY : SemaphoreObejct.o
+
+# target to build an object file
+SemaphoreObejct.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o
+.PHONY : SemaphoreObejct.cpp.o
+
+SemaphoreObejct.i: SemaphoreObejct.cpp.i
+.PHONY : SemaphoreObejct.i
+
+# target to preprocess a source file
+SemaphoreObejct.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.i
+.PHONY : SemaphoreObejct.cpp.i
+
+SemaphoreObejct.s: SemaphoreObejct.cpp.s
+.PHONY : SemaphoreObejct.s
+
+# target to generate assembly for a file
+SemaphoreObejct.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.s
+.PHONY : SemaphoreObejct.cpp.s
+
+ServerSocket.o: ServerSocket.cpp.o
 .PHONY : ServerSocket.o
 
 # target to build an object file
-ServerSocket.cc.o:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cc.o
-.PHONY : ServerSocket.cc.o
+ServerSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o
+.PHONY : ServerSocket.cpp.o
 
-ServerSocket.i: ServerSocket.cc.i
+ServerSocket.i: ServerSocket.cpp.i
 .PHONY : ServerSocket.i
 
 # target to preprocess a source file
-ServerSocket.cc.i:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cc.i
-.PHONY : ServerSocket.cc.i
+ServerSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cpp.i
+.PHONY : ServerSocket.cpp.i
 
-ServerSocket.s: ServerSocket.cc.s
+ServerSocket.s: ServerSocket.cpp.s
 .PHONY : ServerSocket.s
 
 # target to generate assembly for a file
-ServerSocket.cc.s:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cc.s
-.PHONY : ServerSocket.cc.s
+ServerSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cpp.s
+.PHONY : ServerSocket.cpp.s
 
-main.o: main.cc.o
+Thread.o: Thread.cpp.o
+.PHONY : Thread.o
+
+# target to build an object file
+Thread.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Thread.cpp.o
+.PHONY : Thread.cpp.o
+
+Thread.i: Thread.cpp.i
+.PHONY : Thread.i
+
+# target to preprocess a source file
+Thread.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Thread.cpp.i
+.PHONY : Thread.cpp.i
+
+Thread.s: Thread.cpp.s
+.PHONY : Thread.s
+
+# target to generate assembly for a file
+Thread.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Thread.cpp.s
+.PHONY : Thread.cpp.s
+
+main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
-main.cc.o:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cc.o
-.PHONY : main.cc.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.cc.i
+main.i: main.cpp.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.cc.i:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cc.i
-.PHONY : main.cc.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.cc.s
+main.s: main.cpp.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.cc.s:
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cc.s
-.PHONY : main.cc.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -243,15 +339,27 @@ help:
 	@echo "... BasicSocket.o"
 	@echo "... BasicSocket.i"
 	@echo "... BasicSocket.s"
+	@echo "... Grading.o"
+	@echo "... Grading.i"
+	@echo "... Grading.s"
+	@echo "... Judge.o"
+	@echo "... Judge.i"
+	@echo "... Judge.s"
 	@echo "... JudgeServer.o"
 	@echo "... JudgeServer.i"
 	@echo "... JudgeServer.s"
 	@echo "... PollManager.o"
 	@echo "... PollManager.i"
 	@echo "... PollManager.s"
+	@echo "... SemaphoreObejct.o"
+	@echo "... SemaphoreObejct.i"
+	@echo "... SemaphoreObejct.s"
 	@echo "... ServerSocket.o"
 	@echo "... ServerSocket.i"
 	@echo "... ServerSocket.s"
+	@echo "... Thread.o"
+	@echo "... Thread.i"
+	@echo "... Thread.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

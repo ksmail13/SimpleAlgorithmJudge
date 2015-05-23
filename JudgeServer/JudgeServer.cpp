@@ -41,6 +41,15 @@ void JudgeServer::receiveData(int fd)
 
     printf("recv %s from %d\n", buf, fd);
 
+    // TODO : switch to submit or other job
+
+
+    // TODO : message to question
+    question q;
+
+    _jud_man.submit(q);
+
+
 }
 
 void JudgeServer::onRead(int fd)
@@ -56,7 +65,7 @@ void JudgeServer::onRead(int fd)
 
 void JudgeServer::run()
 {
-
+    _jud_man.start();
     _pm.addEvent(_serv.getFileDescriptor(), EPOLLIN);
     _pm.polling(-1);
 }

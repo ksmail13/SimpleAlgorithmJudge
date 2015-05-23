@@ -5,13 +5,12 @@
 #include <iostream>
 #include <fstream>
 #include "Judge.h"
+#include "Grading.h"
 #include "logger.h"
 
 
 Judge::Judge() : Thread(), in(0, 1), out(0, 0), mutex(1,1)
-{
-    start();
-}
+{ }
 
 Judge::~Judge()
 {
@@ -27,9 +26,9 @@ void Judge::submit(question q)
 }
 
 
-int Judge::remain() const
+int Judge::remain()
 {
-    int r_time;
+    int r_time = 0;
     mutex.wait();
     for(auto it = this->_q_list.begin(); it != _q_list.end() ; it ++) {
         r_time += (*it).limit;
@@ -41,22 +40,23 @@ int Judge::remain() const
 void Judge::run()
 {
     while(isRunning()) {
-        InformMessage("Judge Start id:%d", this->getThreadId());
+        InformMessage("Judge Start id:%ld", this->getThreadId());
         question &q = getQuestion();
 
-        if(!isCorrectCode(q.code)) {
-            goto end;
+        if(isCorrectCode(q.code)) {
+            std::string codeName = createCode(q);
+            Grading g(q, codeName, "");
+
+            grading_result g_r = g.grade();
+
+            //TODO : send message to examiner
         }
-        std::string codeName = createCode(q);
-
-
 
         // 현재 채점중인 로직에 대한 시간도 작업량에 반영하기 위해서
         // 리스트에서 제거를 따로함
-end:
         popQuestion();
 
-        InformMessage("finish Judge id:%d", this->getThreadId());
+        InformMessage("finish Judge id:%ld", this->getThreadId());
     }
 }
 
@@ -77,7 +77,7 @@ void Judge::popQuestion() {
 
 std::string Judge::createCode(const question &q) const {
     char name[100];
-    sprintf(name, "submits/%s_%s_%d.%s", q.title, q.examinee_id, time(NULL), q.extends);
+    sprintf(name, "submits/%s_%s_%ld.%s", q.title.c_str(), q.examinee_id.c_str(), time(NULL), q.extends.c_str());
 
     std::fstream codeFile(name, std::ios_base::out);
     codeFile << q.code;

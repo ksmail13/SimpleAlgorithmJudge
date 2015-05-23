@@ -20,8 +20,8 @@ class PollManager
     public:
         static const int MAX_POLL = 10000;
         void init(PollHandler &handler, bool isEdge=false);
-        bool addEvent(int fd, int events);
-        bool removeEvent(int fd);
+        bool addEvent(FileDescriptor fd, int events);
+        bool removeEvent(FileDescriptor fd);
         void polling(int timeout);
 
     private:

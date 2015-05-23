@@ -49,88 +49,88 @@ include CMakeFiles/JudgeServer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/JudgeServer.dir/flags.make
 
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.o: CMakeFiles/JudgeServer.dir/flags.make
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.o: BasicSocket.cc
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o: BasicSocket.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/BasicSocket.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -o CMakeFiles/JudgeServer.dir/BasicSocket.cc.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/BasicSocket.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -o CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/BasicSocket.cpp
 
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/BasicSocket.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/BasicSocket.cc > CMakeFiles/JudgeServer.dir/BasicSocket.cc.i
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/BasicSocket.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/BasicSocket.cpp > CMakeFiles/JudgeServer.dir/BasicSocket.cpp.i
 
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/BasicSocket.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/BasicSocket.cc -o CMakeFiles/JudgeServer.dir/BasicSocket.cc.s
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/BasicSocket.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/BasicSocket.cpp -o CMakeFiles/JudgeServer.dir/BasicSocket.cpp.s
 
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.requires:
-.PHONY : CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.requires
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.requires
 
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.provides: CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.requires
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.provides.build
-.PHONY : CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.provides
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.provides: CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.provides
 
-CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.provides.build: CMakeFiles/JudgeServer.dir/BasicSocket.cc.o
+CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o
 
-CMakeFiles/JudgeServer.dir/PollManager.cc.o: CMakeFiles/JudgeServer.dir/flags.make
-CMakeFiles/JudgeServer.dir/PollManager.cc.o: PollManager.cc
+CMakeFiles/JudgeServer.dir/PollManager.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/PollManager.cpp.o: PollManager.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/PollManager.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -o CMakeFiles/JudgeServer.dir/PollManager.cc.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/PollManager.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/PollManager.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -o CMakeFiles/JudgeServer.dir/PollManager.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/PollManager.cpp
 
-CMakeFiles/JudgeServer.dir/PollManager.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/PollManager.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/PollManager.cc > CMakeFiles/JudgeServer.dir/PollManager.cc.i
+CMakeFiles/JudgeServer.dir/PollManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/PollManager.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/PollManager.cpp > CMakeFiles/JudgeServer.dir/PollManager.cpp.i
 
-CMakeFiles/JudgeServer.dir/PollManager.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/PollManager.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/PollManager.cc -o CMakeFiles/JudgeServer.dir/PollManager.cc.s
+CMakeFiles/JudgeServer.dir/PollManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/PollManager.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/PollManager.cpp -o CMakeFiles/JudgeServer.dir/PollManager.cpp.s
 
-CMakeFiles/JudgeServer.dir/PollManager.cc.o.requires:
-.PHONY : CMakeFiles/JudgeServer.dir/PollManager.cc.o.requires
+CMakeFiles/JudgeServer.dir/PollManager.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/PollManager.cpp.o.requires
 
-CMakeFiles/JudgeServer.dir/PollManager.cc.o.provides: CMakeFiles/JudgeServer.dir/PollManager.cc.o.requires
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cc.o.provides.build
-.PHONY : CMakeFiles/JudgeServer.dir/PollManager.cc.o.provides
+CMakeFiles/JudgeServer.dir/PollManager.cpp.o.provides: CMakeFiles/JudgeServer.dir/PollManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/PollManager.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/PollManager.cpp.o.provides
 
-CMakeFiles/JudgeServer.dir/PollManager.cc.o.provides.build: CMakeFiles/JudgeServer.dir/PollManager.cc.o
+CMakeFiles/JudgeServer.dir/PollManager.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/PollManager.cpp.o
 
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.o: CMakeFiles/JudgeServer.dir/flags.make
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.o: ServerSocket.cc
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o: ServerSocket.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/ServerSocket.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -o CMakeFiles/JudgeServer.dir/ServerSocket.cc.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/ServerSocket.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -o CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/ServerSocket.cpp
 
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/ServerSocket.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/ServerSocket.cc > CMakeFiles/JudgeServer.dir/ServerSocket.cc.i
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/ServerSocket.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/ServerSocket.cpp > CMakeFiles/JudgeServer.dir/ServerSocket.cpp.i
 
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/ServerSocket.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/ServerSocket.cc -o CMakeFiles/JudgeServer.dir/ServerSocket.cc.s
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/ServerSocket.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/ServerSocket.cpp -o CMakeFiles/JudgeServer.dir/ServerSocket.cpp.s
 
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.requires:
-.PHONY : CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.requires
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.requires
 
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.provides: CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.requires
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.provides.build
-.PHONY : CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.provides
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.provides: CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.provides
 
-CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.provides.build: CMakeFiles/JudgeServer.dir/ServerSocket.cc.o
+CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o
 
 CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
 CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o: JudgeServer.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -o CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -o CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.cpp
 
 CMakeFiles/JudgeServer.dir/JudgeServer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/JudgeServer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.cpp > CMakeFiles/JudgeServer.dir/JudgeServer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.cpp > CMakeFiles/JudgeServer.dir/JudgeServer.cpp.i
 
 CMakeFiles/JudgeServer.dir/JudgeServer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/JudgeServer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall --std=c++11 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.cpp -o CMakeFiles/JudgeServer.dir/JudgeServer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.cpp -o CMakeFiles/JudgeServer.dir/JudgeServer.cpp.s
 
 CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o.requires:
 .PHONY : CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o.requires
@@ -141,45 +141,145 @@ CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o.provides: CMakeFiles/JudgeServer.di
 
 CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o
 
-CMakeFiles/JudgeServer.dir/main.cc.o: CMakeFiles/JudgeServer.dir/flags.make
-CMakeFiles/JudgeServer.dir/main.cc.o: main.cc
+CMakeFiles/JudgeServer.dir/main.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/main.cpp.o: main.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/main.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/JudgeServer.dir/main.cc.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/JudgeServer.dir/main.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/main.cpp
 
-CMakeFiles/JudgeServer.dir/main.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/main.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/main.cc > CMakeFiles/JudgeServer.dir/main.cc.i
+CMakeFiles/JudgeServer.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/main.cpp > CMakeFiles/JudgeServer.dir/main.cpp.i
 
-CMakeFiles/JudgeServer.dir/main.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/main.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/main.cc -o CMakeFiles/JudgeServer.dir/main.cc.s
+CMakeFiles/JudgeServer.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/main.cpp -o CMakeFiles/JudgeServer.dir/main.cpp.s
 
-CMakeFiles/JudgeServer.dir/main.cc.o.requires:
-.PHONY : CMakeFiles/JudgeServer.dir/main.cc.o.requires
+CMakeFiles/JudgeServer.dir/main.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/main.cpp.o.requires
 
-CMakeFiles/JudgeServer.dir/main.cc.o.provides: CMakeFiles/JudgeServer.dir/main.cc.o.requires
-	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cc.o.provides.build
-.PHONY : CMakeFiles/JudgeServer.dir/main.cc.o.provides
+CMakeFiles/JudgeServer.dir/main.cpp.o.provides: CMakeFiles/JudgeServer.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/main.cpp.o.provides
 
-CMakeFiles/JudgeServer.dir/main.cc.o.provides.build: CMakeFiles/JudgeServer.dir/main.cc.o
+CMakeFiles/JudgeServer.dir/main.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/main.cpp.o
+
+CMakeFiles/JudgeServer.dir/Judge.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/Judge.cpp.o: Judge.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/Judge.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/JudgeServer.dir/Judge.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Judge.cpp
+
+CMakeFiles/JudgeServer.dir/Judge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/Judge.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Judge.cpp > CMakeFiles/JudgeServer.dir/Judge.cpp.i
+
+CMakeFiles/JudgeServer.dir/Judge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/Judge.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Judge.cpp -o CMakeFiles/JudgeServer.dir/Judge.cpp.s
+
+CMakeFiles/JudgeServer.dir/Judge.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/Judge.cpp.o.requires
+
+CMakeFiles/JudgeServer.dir/Judge.cpp.o.provides: CMakeFiles/JudgeServer.dir/Judge.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Judge.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/Judge.cpp.o.provides
+
+CMakeFiles/JudgeServer.dir/Judge.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/Judge.cpp.o
+
+CMakeFiles/JudgeServer.dir/Thread.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/Thread.cpp.o: Thread.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/Thread.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/JudgeServer.dir/Thread.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Thread.cpp
+
+CMakeFiles/JudgeServer.dir/Thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/Thread.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Thread.cpp > CMakeFiles/JudgeServer.dir/Thread.cpp.i
+
+CMakeFiles/JudgeServer.dir/Thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/Thread.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Thread.cpp -o CMakeFiles/JudgeServer.dir/Thread.cpp.s
+
+CMakeFiles/JudgeServer.dir/Thread.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/Thread.cpp.o.requires
+
+CMakeFiles/JudgeServer.dir/Thread.cpp.o.provides: CMakeFiles/JudgeServer.dir/Thread.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Thread.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/Thread.cpp.o.provides
+
+CMakeFiles/JudgeServer.dir/Thread.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/Thread.cpp.o
+
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o: SemaphoreObejct.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_8)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/SemaphoreObejct.cpp
+
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/SemaphoreObejct.cpp > CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.i
+
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/SemaphoreObejct.cpp -o CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.s
+
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.requires
+
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.provides: CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.provides
+
+CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o
+
+CMakeFiles/JudgeServer.dir/Grading.cpp.o: CMakeFiles/JudgeServer.dir/flags.make
+CMakeFiles/JudgeServer.dir/Grading.cpp.o: Grading.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/CMakeFiles $(CMAKE_PROGRESS_9)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/JudgeServer.dir/Grading.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/JudgeServer.dir/Grading.cpp.o -c /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Grading.cpp
+
+CMakeFiles/JudgeServer.dir/Grading.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JudgeServer.dir/Grading.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Grading.cpp > CMakeFiles/JudgeServer.dir/Grading.cpp.i
+
+CMakeFiles/JudgeServer.dir/Grading.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JudgeServer.dir/Grading.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/Grading.cpp -o CMakeFiles/JudgeServer.dir/Grading.cpp.s
+
+CMakeFiles/JudgeServer.dir/Grading.cpp.o.requires:
+.PHONY : CMakeFiles/JudgeServer.dir/Grading.cpp.o.requires
+
+CMakeFiles/JudgeServer.dir/Grading.cpp.o.provides: CMakeFiles/JudgeServer.dir/Grading.cpp.o.requires
+	$(MAKE) -f CMakeFiles/JudgeServer.dir/build.make CMakeFiles/JudgeServer.dir/Grading.cpp.o.provides.build
+.PHONY : CMakeFiles/JudgeServer.dir/Grading.cpp.o.provides
+
+CMakeFiles/JudgeServer.dir/Grading.cpp.o.provides.build: CMakeFiles/JudgeServer.dir/Grading.cpp.o
 
 # Object files for target JudgeServer
 JudgeServer_OBJECTS = \
-"CMakeFiles/JudgeServer.dir/BasicSocket.cc.o" \
-"CMakeFiles/JudgeServer.dir/PollManager.cc.o" \
-"CMakeFiles/JudgeServer.dir/ServerSocket.cc.o" \
+"CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o" \
+"CMakeFiles/JudgeServer.dir/PollManager.cpp.o" \
+"CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o" \
 "CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o" \
-"CMakeFiles/JudgeServer.dir/main.cc.o"
+"CMakeFiles/JudgeServer.dir/main.cpp.o" \
+"CMakeFiles/JudgeServer.dir/Judge.cpp.o" \
+"CMakeFiles/JudgeServer.dir/Thread.cpp.o" \
+"CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o" \
+"CMakeFiles/JudgeServer.dir/Grading.cpp.o"
 
 # External object files for target JudgeServer
 JudgeServer_EXTERNAL_OBJECTS =
 
-JudgeServer: CMakeFiles/JudgeServer.dir/BasicSocket.cc.o
-JudgeServer: CMakeFiles/JudgeServer.dir/PollManager.cc.o
-JudgeServer: CMakeFiles/JudgeServer.dir/ServerSocket.cc.o
+JudgeServer: CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o
+JudgeServer: CMakeFiles/JudgeServer.dir/PollManager.cpp.o
+JudgeServer: CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o
 JudgeServer: CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o
-JudgeServer: CMakeFiles/JudgeServer.dir/main.cc.o
+JudgeServer: CMakeFiles/JudgeServer.dir/main.cpp.o
+JudgeServer: CMakeFiles/JudgeServer.dir/Judge.cpp.o
+JudgeServer: CMakeFiles/JudgeServer.dir/Thread.cpp.o
+JudgeServer: CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o
+JudgeServer: CMakeFiles/JudgeServer.dir/Grading.cpp.o
 JudgeServer: CMakeFiles/JudgeServer.dir/build.make
 JudgeServer: CMakeFiles/JudgeServer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable JudgeServer"
@@ -189,11 +289,15 @@ JudgeServer: CMakeFiles/JudgeServer.dir/link.txt
 CMakeFiles/JudgeServer.dir/build: JudgeServer
 .PHONY : CMakeFiles/JudgeServer.dir/build
 
-CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/BasicSocket.cc.o.requires
-CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/PollManager.cc.o.requires
-CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/ServerSocket.cc.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/BasicSocket.cpp.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/PollManager.cpp.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/ServerSocket.cpp.o.requires
 CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/JudgeServer.cpp.o.requires
-CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/main.cc.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/main.cpp.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/Judge.cpp.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/Thread.cpp.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/SemaphoreObejct.cpp.o.requires
+CMakeFiles/JudgeServer.dir/requires: CMakeFiles/JudgeServer.dir/Grading.cpp.o.requires
 .PHONY : CMakeFiles/JudgeServer.dir/requires
 
 CMakeFiles/JudgeServer.dir/clean:

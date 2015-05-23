@@ -8,6 +8,7 @@
 #include "InetSocket.h"
 #include "PollManager.h"
 #include "ServerSocket.h"
+#include "JudgeManager.h"
 
 using namespace Network;
 class JudgeServer: public PollHandler
@@ -16,17 +17,18 @@ private:
     static JudgeServer *instance;
     PollManager _pm;
     ServerSocket _serv;
+    JudgeManager _jud_man;
 
     std::vector<InetSocket *> _conn;
 
-    JudgeServer():_serv(PORT) { _pm.init(*this); }
+    JudgeServer():_serv(PORT), _jud_man(JUDGES) { _pm.init(*this); }
     ~JudgeServer() {}
     void createNewConnection();
     void removeConnection(InetSocket *sock);
 
 public:
     const static int PORT = 54321;
-
+    const static int JUDGES = 4;
     static JudgeServer *getInstance() {
         if(JudgeServer::instance == NULL)
             JudgeServer::instance = new JudgeServer();
