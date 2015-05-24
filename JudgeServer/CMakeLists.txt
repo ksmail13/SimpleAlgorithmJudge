@@ -13,7 +13,7 @@ include_directories(
 set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} ")
 
 # Library path
-set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\"")
+set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" -L\"./include/mongo\"")
 
 # Define the CXX sources
 set ( CXX_SRCS
@@ -21,6 +21,8 @@ set ( CXX_SRCS
     PollManager.cpp
     ServerSocket.cpp
     JudgeServer.cpp
+    InetSocket.cpp
+    jsoncpp.cpp
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_REENTRANT")
@@ -34,3 +36,4 @@ add_executable(JudgeServer ${CXX_SRCS} ${C_SRCS}
 
 # set_property(TARGET JudgeServer PROPERTY COMPILE_OPTIONS "-pthread")
 target_link_libraries(JudgeServer pthread)
+target_link_libraries(JudgeServer ./lib/libmongoclient.a)

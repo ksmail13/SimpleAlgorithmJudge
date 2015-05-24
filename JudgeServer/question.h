@@ -15,7 +15,7 @@ struct question
 {
     int qno;
     int limit;
-    Network::InetSocket examinee;
+    Network::InetSocket *examinee;
     std::string extends;
     std::string examinee_id;
     std::string title;

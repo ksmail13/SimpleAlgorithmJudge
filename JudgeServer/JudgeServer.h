@@ -9,6 +9,7 @@
 #include "PollManager.h"
 #include "ServerSocket.h"
 #include "JudgeManager.h"
+#include "json.h"
 
 using namespace Network;
 class JudgeServer: public PollHandler

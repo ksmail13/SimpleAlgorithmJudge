@@ -31,21 +31,21 @@ void JudgeServer::removeConnection(InetSocket *sock)
 void JudgeServer::receiveData(int fd)
 {
     InetSocket &sock = *_conn[fd];
-    char buf[1024] = {};
-    ssize_t strlen = sock.read(buf, 1024);
-    if(strlen < 0) {
-        removeConnection(&sock);
-        return ;
-    }
-    buf[strlen] = 0;
-
-    printf("recv %s from %d\n", buf, fd);
-
+    struct packet p;
+    sock.recvPacket(p);
+    printf("recv %s from %d\n", p.buf.c_str(), fd);
+    
+    Json::Reader reader;
+    Json::Value value;
+    reader.parse(p.buf, value);
     // TODO : switch to submit or other job
+
+
 
 
     // TODO : message to question
     question q;
+    q.examinee = &sock;
 
     _jud_man.submit(q);
 
