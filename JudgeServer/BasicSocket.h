@@ -22,14 +22,15 @@ namespace Network
             FileDescriptor _fd;
             char *_buf;
             bool _nonblock;
-        public:
+    public:
+        
+            BasicSocket():_fd(-1), _nonblock(false) {};
             BasicSocket(int proto_fam, int socktype, int proto_type):
                 _fd(socket(proto_fam, socktype, proto_type)), 
                 _nonblock(false){}
 
             BasicSocket(int fd):_fd(fd){};
             
-            virtual ~BasicSocket(){this->close();};
 
             FileDescriptor getFileDescriptor() const {
                 return _fd;
@@ -44,7 +45,7 @@ namespace Network
             bool bind(struct sockaddr *addr, socklen_t adr_sz);
             bool listen(int backlog);
 
-            BasicSocket accept();
+            virtual BasicSocket *accept();
             
             SignedSize recv(void *buf, size_t buf_len, int msgtype);
             SignedSize send(void *buf, size_t buf_len, int msgtype);

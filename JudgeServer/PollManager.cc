@@ -1,6 +1,6 @@
 #include "PollManager.h"
 #include "logger.h"
-void PollManager::init(PollHandler &handler, bool isEdge = false)
+void PollManager::init(PollHandler &handler, bool isEdge)
 {
     if(isEdge) throw "Not ready";
 
