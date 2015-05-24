@@ -3,11 +3,10 @@
 //
 
 #include <iostream>
-#include "logger.h"
 #include "JudgeServer.h"
 
 
-JudgeServer *JudgeServer::instance;
+JudgeServer *JudgeServer::instance = NULL;
 
 void JudgeServer::createNewConnection()
 {
@@ -17,6 +16,7 @@ void JudgeServer::createNewConnection()
         _conn.resize(clnt->getFileDescriptor()+1);
     }
     _conn[clnt->getFileDescriptor()] = clnt;
+    _pm.addEvent(clnt->getFileDescriptor(), EPOLLIN);
     InformMessage("new connection from %s", clnt->getIpAddress().c_str());
 }
 
@@ -31,10 +31,16 @@ void JudgeServer::removeConnection(InetSocket *sock)
 void JudgeServer::receiveData(int fd)
 {
     InetSocket &sock = *_conn[fd];
+    InformMessage("receive data from %s", sock.getIpAddress().c_str());
     struct packet p;
-    sock.recvPacket(p);
-    printf("recv %s from %d\n", p.buf.c_str(), fd);
-    
+
+    InformMessage("before %s \n", p.buf.c_str());
+    if(!sock.recvPacket(p))
+        removeConnection(&sock);
+
+    InformMessage("recv %s from %d\n", p.buf.c_str(), fd);
+
+    #if 0
     Json::Reader reader;
     Json::Value value;
     reader.parse(p.buf, value);
@@ -49,7 +55,7 @@ void JudgeServer::receiveData(int fd)
 
     _jud_man.submit(q);
 
-
+    #endif
 }
 
 void JudgeServer::onRead(int fd)
@@ -65,6 +71,7 @@ void JudgeServer::onRead(int fd)
 
 void JudgeServer::run()
 {
+    InformMessage("server start");
     _jud_man.start();
     _pm.addEvent(_serv.getFileDescriptor(), EPOLLIN);
     _pm.polling(-1);

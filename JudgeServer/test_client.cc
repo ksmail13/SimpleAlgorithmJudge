@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include "InetSocket.h"
+
 #define BUF_SIZE 1024
 
 int main()
@@ -28,15 +30,19 @@ int main()
     perror("connect error");
     exit(1);
     }
+    Network::InetSocket i_sock(sock);
+    
 
     for(i=0;i<5;i++) {
-        gets(buf);
-        write(sock, buf, strlen(buf));
-
-        printf("send : %s", buf);
+        Network::packet p;
+        scanf("%s", buf);
+        p.len = strlen(buf);
+        p.buf.append(buf);
+        i_sock.sendPacket(p);
+        printf("send : %s\n", buf);
     }
 
-    close(sock);
+    i_sock.close(); 
 
     return 0;
 }

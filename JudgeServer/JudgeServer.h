@@ -9,6 +9,7 @@
 #include "PollManager.h"
 #include "ServerSocket.h"
 #include "JudgeManager.h"
+#include "logger.h"
 #include "json.h"
 
 using namespace Network;
@@ -39,8 +40,8 @@ public:
     void run();
 
     virtual void onRead(int fd);
-    virtual void onWrite(int fd) {}
-    virtual void onError(int fd) {}
+    virtual void onWrite(int fd) {InformMessage("write on %d", fd);}
+    virtual void onError(int fd) {InformMessage("error on %d", fd);}
 
     void receiveData(int fd);
 };

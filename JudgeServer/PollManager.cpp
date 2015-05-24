@@ -49,7 +49,7 @@ void PollManager::polling(int timeout)
     struct epoll_event evs[MAX_POLL] = {0,};
     while(true) {
         nevs = epoll_wait(_ed, evs, MAX_POLL, timeout);
-
+        InformMessage("polled! %d", nevs);
         if(nevs == -1) {
             ErrorMessage("epoll_wait() error");
             break;
