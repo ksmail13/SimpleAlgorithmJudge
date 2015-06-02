@@ -9,7 +9,7 @@
 #include "logger.h"
 
 
-Judge::Judge() : Thread(), in(0, 1), out(0, 0), mutex(1,1)
+Judge::Judge() : Thread(), in(0, 0), out(0, 1), mutex(0, 1)
 { }
 
 Judge::~Judge()
@@ -61,11 +61,16 @@ void Judge::run()
 }
 
 question &Judge::getQuestion() {
-    in.wait();
-    mutex.wait();
+    // 데이터가 들어올 때 까지 반복??
+    //do {
+        in.wait();
+        mutex.wait();
+    //} while(_q_list.size() == 0);
     question &q = _q_list[0];
     mutex.post();
     out.post();
+
+    InformMessage("get question!");
     return q;
 }
 

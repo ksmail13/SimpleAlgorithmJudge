@@ -11,7 +11,8 @@ using namespace Network;
 int main(int argc, const char *argv[])
 {
     InformMessage("information %d", 1);
+    JudgeServer *server = JudgeServer::getInstance();
+    if(server != NULL) server->run();
 
-    JudgeServer::getInstance()->run();
     return 0;
 }

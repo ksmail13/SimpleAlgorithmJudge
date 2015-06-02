@@ -36,4 +36,4 @@ add_executable(JudgeServer ${CXX_SRCS} ${C_SRCS}
 
 # set_property(TARGET JudgeServer PROPERTY COMPILE_OPTIONS "-pthread")
 target_link_libraries(JudgeServer pthread)
-target_link_libraries(JudgeServer ./lib/libmongoclient.a)
+#target_link_libraries(JudgeServer ./lib/libmongoclient.a)
