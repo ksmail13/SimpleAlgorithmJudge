@@ -5,6 +5,7 @@
 #ifndef JUDGESERVER_JUDGESERVER_H
 #define JUDGESERVER_JUDGESERVER_H
 
+#include <map>
 #include "InetSocket.h"
 #include "PollManager.h"
 #include "ServerSocket.h"
@@ -22,6 +23,8 @@ private:
     JudgeManager _jud_man;
 
     std::vector<InetSocket *> _conn;
+
+
 
     JudgeServer():_serv(PORT), _jud_man(JUDGES) { _pm.init(*this); }
     ~JudgeServer() {}
