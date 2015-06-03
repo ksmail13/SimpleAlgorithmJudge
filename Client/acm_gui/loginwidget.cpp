@@ -90,7 +90,7 @@ QString LoginWidget::getIP()
     QString ip3 = edit_ip[2]->text();
     QString ip4 = edit_ip[3]->text();
 
-    if(ip1 == NULL | ip2 == NULL | ip3 == NULL | ip4 == NULL)
+    if(ip1 == NULL || ip2 == NULL || ip3 == NULL || ip4 == NULL)
     {
         ip = "";
     }

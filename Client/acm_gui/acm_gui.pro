@@ -18,8 +18,9 @@ SOURCES += main.cpp\
     loginwindow.cpp \
     mainwidget.cpp \
     socketmanager.cpp \
-    BasicSocket.cc \
-    jsoncpp.cpp
+    jsoncpp.cpp \
+    BasicSocket.cpp \
+    InetSocket.cpp
 
 HEADERS  += \
     loginwidget.h \

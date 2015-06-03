@@ -8,6 +8,10 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QTextEdit>
+
+#include "socketmanager.h"
+#include "json.h"
+
 class MainWidget : public QWidget
 {
     Q_OBJECT
@@ -19,6 +23,12 @@ public:
     QPushButton  *button_submit;
 
     void setLabel(QString msg);
+
+    SocketManager *socketManager;
+
+public slots:
+    void submit();
+
 
 private:
     QLabel      *label;

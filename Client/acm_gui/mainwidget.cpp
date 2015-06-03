@@ -61,6 +61,9 @@ MainWidget::MainWidget() : QWidget()
     layout_main->addLayout(layout_grid_buttons);
 
     setLayout(layout_main);
+
+    //Setting Slot
+    connect(button_submit, SIGNAL(clicked()), this, SLOT(submit()));
 }
 void MainWidget::setLabel(QString msg)
 {
@@ -72,3 +75,19 @@ MainWidget::~MainWidget()
 
 }
 
+void MainWidget::submit()
+{
+    QString problem = combo_problem->currentText();
+    QString language = combo_language->currentText();
+    QString code = text_code->toPlainText();
+
+    Json::Value root;
+    Json::Value PROBLEM;
+    root["PROBLEM"] = problem.toStdString().c_str();
+    Json::Value LANGUAGE;
+    root["LANGUAGE"] = language.toStdString().c_str();
+    Json::Value CODE;
+    root["CODE"] = code.toStdString().c_str();
+
+    socketManager->send(root);
+}
