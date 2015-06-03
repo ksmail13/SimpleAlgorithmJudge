@@ -40,27 +40,28 @@ void JudgeServer::receiveData(int fd)
 
     InformMessage("recv %s from %d\n", p.buf.c_str(), fd);
 
-    #if 0
+
     Json::Reader reader;
-    Json::Value value;
-    reader.parse(p.buf, value);
+    Json::Value root;
+    reader.parse(p.buf, root);
+
+    InformMessage("%d message type %s", fd, root.get("type", "notype").asCString());
     // TODO : switch to submit or other job
 
 
 
-
+#if 0
     // TODO : message to question
     question q;
     q.examinee = &sock;
 
     _jud_man.submit(q);
-
-    #endif
+#endif
 }
 
 void JudgeServer::onRead(int fd)
 {
-
+    InformMessage("read!");
     if(fd == _serv.getFileDescriptor()) {
         createNewConnection();
     }

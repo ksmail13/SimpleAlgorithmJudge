@@ -39,8 +39,8 @@ int Judge::remain()
 
 void Judge::run()
 {
+    InformMessage("Judge Start id:%ld", this->getThreadId());
     while(isRunning()) {
-        InformMessage("Judge Start id:%ld", this->getThreadId());
         question &q = getQuestion();
 
         if(isCorrectCode(q.code)) {
@@ -58,6 +58,8 @@ void Judge::run()
 
         InformMessage("finish Judge id:%ld", this->getThreadId());
     }
+
+    InformMessage("Judge Start id:%ld", this->getThreadId());
 }
 
 question &Judge::getQuestion() {

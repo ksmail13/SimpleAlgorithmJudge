@@ -381,6 +381,7 @@ JudgeServer: CMakeFiles/JudgeServer.dir/Grading.cpp.o
 JudgeServer: CMakeFiles/JudgeServer.dir/Timer.cpp.o
 JudgeServer: CMakeFiles/JudgeServer.dir/JudgeManager.cpp.o
 JudgeServer: CMakeFiles/JudgeServer.dir/build.make
+JudgeServer: /home/micky/mongo-client-install/lib/libmongoclient.a
 JudgeServer: CMakeFiles/JudgeServer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable JudgeServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JudgeServer.dir/link.txt --verbose=$(VERBOSE)

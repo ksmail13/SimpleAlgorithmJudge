@@ -11,9 +11,11 @@ include_directories(
 
 # Linker options
 set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} ")
-
+include_directories(/home/micky/mongo-client-install)
+include_directories(/home/micky/mongo-client-install/include)
 # Library path
-set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" -L\"./include/mongo\"")
+set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\"")
+
 
 # Define the CXX sources
 set ( CXX_SRCS
@@ -36,4 +38,4 @@ add_executable(JudgeServer ${CXX_SRCS} ${C_SRCS}
 
 # set_property(TARGET JudgeServer PROPERTY COMPILE_OPTIONS "-pthread")
 target_link_libraries(JudgeServer pthread)
-#target_link_libraries(JudgeServer ./lib/libmongoclient.a)
+target_link_libraries(JudgeServer /home/micky/mongo-client-install/lib/libmongoclient.a)
