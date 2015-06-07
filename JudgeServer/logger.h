@@ -14,8 +14,8 @@
 #define BaseLogMessage(target, message, ...)
 
 
-#define InformMessage(message, ...) fprintf(stdout, "[%s(%4d)] " message "\n", __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__)
+#define InformMessage(message, ...) fprintf(stdout, "[%s(%4d)] " message "\n", __FILE__, __LINE__, ## __VA_ARGS__)
 
-#define ErrorMessage(message, ...) fprintf(stderr, "[%s(%4d)] " message "\n", __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__)
+#define ErrorMessage(message, ...) fprintf(stderr, "[%s(%4d)] " message "\n", __FILE__, __LINE__, ## __VA_ARGS__)
 
 #endif

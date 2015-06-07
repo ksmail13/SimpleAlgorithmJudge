@@ -8,11 +8,10 @@
 
 #include "Thread.h"
 #include "SemaphoreObejct.h"
+#include "Task.h"
 
 namespace Timer {
-    class TimerTask {
-    public:
-        virtual void task() = 0;
+    class TimerTask : public Util::Task {
     };
 
     class Timer : public Thread::Thread

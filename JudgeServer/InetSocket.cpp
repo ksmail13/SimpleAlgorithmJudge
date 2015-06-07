@@ -31,20 +31,25 @@ bool InetSocket::recvPacket(packet &p) {
     char buf[BUF_SIZE] = {};
     std::string &packet = p.buf;
     int &tot_size=p.len;
-    int curr_recv = 0, recv_len=0;
+    SignedSize tot_recv = 0, recv_len=0, remain_len=0;
 
-    if((curr_recv = read(buf, BUF_SIZE)) <= 0) return false;
+    if((tot_recv = read(buf, sizeof(tot_size))) <= 0) return false;
 
     tot_size = *(int*)buf;
-    InformMessage("size %d", tot_size);
-    packet.append(buf+sizeof(tot_size));
-    curr_recv -= sizeof(tot_size);
-    while(curr_recv < tot_size) {
-        recv_len = read(buf, BUF_SIZE);
+    //InformMessage("size %d\n%s", tot_size, buf);
+    //packet.append(buf+sizeof(tot_size));
+    //tot_recv -= sizeof(tot_size);
+    remain_len = tot_size;
+    while(remain_len) {
+        //InformMessage("remain %lds data", remain_len);
+        recv_len = read(buf, remain_len>BUF_SIZE ? BUF_SIZE : remain_len);
+        //InformMessage("recv %lds data", recv_len);
         if(recv_len < 0) return false;
         else if(recv_len == 0) break;
 
-        curr_recv += recv_len;
+        tot_recv += recv_len;
+        remain_len -= recv_len;
+        //InformMessage("recv buf : %s", buf);
         packet.append(buf);
     }
 

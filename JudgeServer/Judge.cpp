@@ -42,10 +42,12 @@ void Judge::run()
     InformMessage("Judge Start id:%ld", this->getThreadId());
     while(isRunning()) {
         question &q = getQuestion();
+        InformMessage("recv question!! from=%ld qno=%s", this->getThreadId(), q.qno.c_str());
 
         if(isCorrectCode(q.code)) {
             std::string codeName = createCode(q);
-            Grading g(q, codeName, "");
+            Compile c(codeName, q.compiler, std::map<std::string, std::string>());
+            Grading g(q, codeName, c);
 
             grading_result g_r = g.grade();
 
@@ -59,7 +61,7 @@ void Judge::run()
         InformMessage("finish Judge id:%ld", this->getThreadId());
     }
 
-    InformMessage("Judge Start id:%ld", this->getThreadId());
+    InformMessage("Judge END id:%ld", this->getThreadId());
 }
 
 question &Judge::getQuestion() {
@@ -85,17 +87,17 @@ void Judge::popQuestion() {
 std::string Judge::createCode(const question &q) const {
     char name[100];
     sprintf(name, "submits/%s_%s_%ld.%s", q.title.c_str(), q.examinee_id.c_str(), time(NULL), q.extends.c_str());
-
+    InformMessage("name %s", name);
     std::fstream codeFile(name, std::ios_base::out);
     codeFile << q.code;
     codeFile.flush();
     codeFile.close();
 
-    return name;
+    return std::string(name);
 }
 
 bool Judge::isCorrectCode(const std::string &code) {
 
-    return code.find("#include <sys/socket.h>") == std::string::npos &&
+    return code.length() > 0 && code.find("#include <sys/socket.h>") == std::string::npos &&
             code.find("#include <unistd.h>") == std::string::npos;
 }

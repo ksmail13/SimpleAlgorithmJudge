@@ -1,2 +1,2 @@
-{"type":"login","ID":"ksmail12", "PW":"12345"}
-{"type":"submit", "qno":"12345", "title":"test", "code":"#include <stdio.h>", "s_id":"123"}
+{"type":"login","id":"test1", "pw":"test1"}
+{"type":"submit", "qno":"12345", "title":"test", "code":"#include <stdio.h>", "s_id":"123", "lang":"c++"}

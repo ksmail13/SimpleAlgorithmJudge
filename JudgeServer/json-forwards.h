@@ -1,1 +1,1 @@
-/home/micky/Documents/Coding/SimpleAlgorithmJudge/Client/acm_gui/json-forwards.h
+/home/mikcy/Documents/Coding/SimpleAlgorithmJudge/Client/acm_gui/json-forwards.h

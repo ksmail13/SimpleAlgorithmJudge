@@ -8,7 +8,6 @@
 #include "Judge.h"
 #include <vector>
 #include "json.h"
-#include <include/mongo/bson/bson.h>
 
 class JudgeManager {
 private:
