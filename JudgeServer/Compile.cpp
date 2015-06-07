@@ -2,6 +2,7 @@
 // Created by mikcy on 15. 6. 7.
 //
 
+#include <iostream>
 #include "Compile.h"
 #include "logger.h"
 
@@ -14,16 +15,22 @@ compile_result Compile::compile()
     FILE *pp = popen(cmd.c_str(), "r");
     struct compile_result result;
     result.error = false;
+    if(pp==NULL) {
+        result.error = true;
+        result.message = "pipe open failed";
+        return result;
+    }
+
     // 임시저장용
     char buf[1024];
 
     // 컴파일 성공시 아무런 메시지를 출력하지 않는다.
-    while(!feof(pp)) {
-        fgets(buf, 1024, pp);
+    while(fgets(buf, 1024, pp) != NULL) {
         result.error = true;
         result.message.append(buf);
     }
 
+    pclose(pp);
     return result;
 }
 

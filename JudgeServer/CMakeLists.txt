@@ -4,7 +4,7 @@ project(JudgeServer)
 
 
 include_directories(
-    /home/micky/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/
+    /home/mikcy/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/
 )
 
 # Linker options

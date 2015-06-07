@@ -201,6 +201,7 @@ void JudgeServer::submitProcess(Json::Value &value, InetSocket &socket) {
     q.qno = value.get("qno", "0").asString();
     q.title = value.get("title", "").asString();
     q.lang = value.get("lang", "cpp").asString();
+    q.examinee_id = value.get("id", "").asString();
     // session
     q.examinee = &socket;
     // from db
@@ -240,10 +241,15 @@ void JudgeServer::getQuestionData(Json::Reader &reader, DataBase::DBConnection &
         q.limit = temp.get("limit", 1).asInt();
         for(auto inputIt = temp["input"].begin(), ansIt=temp["output"].begin();
                 inputIt!=temp["input"].end() && ansIt!=temp["output"].end();) {
-            q.testcases.push_back(std::make_pair(inputIt->asString(), ansIt->asString()));
+            InformMessage("input %s ans %s", inputIt->asString().c_str(), ansIt->asString().c_str());
+            std::string in = inputIt->asString();
+            in.push_back('\n');
+            q.testcases.push_back(std::make_pair(in, ansIt->asString()));
             inputIt++;
             ansIt++;
         }
+
+
         break;
     }
     d.clear();

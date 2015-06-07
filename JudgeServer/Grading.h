@@ -33,7 +33,7 @@ class Grading {
 public:
     Grading();
 
-    Grading(question q, std::string codePath, Compile &c);
+    Grading(question &q, std::string codePath, Compile &c);
 
     ~Grading(){ }
     grading_result grade();

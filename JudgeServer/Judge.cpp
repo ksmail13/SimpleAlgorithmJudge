@@ -7,6 +7,7 @@
 #include "Judge.h"
 #include "Grading.h"
 #include "logger.h"
+#include "json.h"
 
 
 Judge::Judge() : Thread(), in(0, 0), out(0, 1), mutex(0, 1)
@@ -49,9 +50,22 @@ void Judge::run()
             Compile c(codeName, q.compiler, std::map<std::string, std::string>());
             Grading g(q, codeName, c);
 
+            for(auto r : q.testcases) {
+                InformMessage("testcase info %s,%s", r.first.c_str(), r.second.c_str());
+            }
+
             grading_result g_r = g.grade();
 
-            //TODO : send message to examiner
+            Json::StyledWriter writer;
+            Json::Value value;
+            Network::packet p;
+            value["result"] = g_r.correct?"true":"false";
+            value["error"] = g_r.error?"true":"false";
+            value["message"] = g_r.message;
+            p.buf =writer.write(value);
+            p.len = p.buf.size();
+            InformMessage("result %s", p.buf.c_str());
+            q.examinee->sendPacket(p);
         }
 
         // 현재 채점중인 로직에 대한 시간도 작업량에 반영하기 위해서
@@ -86,7 +100,7 @@ void Judge::popQuestion() {
 
 std::string Judge::createCode(const question &q) const {
     char name[100];
-    sprintf(name, "submits/%s_%s_%ld.%s", q.title.c_str(), q.examinee_id.c_str(), time(NULL), q.extends.c_str());
+    sprintf(name, "/home/mikcy/Documents/Coding/submits/%s_%s_%ld.%s", q.title.c_str(), q.examinee_id.c_str(), time(NULL), q.extends.c_str());
     InformMessage("name %s", name);
     std::fstream codeFile(name, std::ios_base::out);
     codeFile << q.code;
