@@ -3,19 +3,28 @@
 //
 
 #include "Grading.h"
-#include "Timer.h"
 #include "logger.h"
+#include <algorithm>
+#include <functional>
+#include <cctype>
+#include <locale>
 
-class KillTimerTask :public Timer::TimerTask {
-private :
-    pid_t _target;
-public :
-    KillTimerTask(pid_t pid):_target(pid) { }
+// trim from start
+static inline std::string &ltrim(std::string &s) {
+    s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+    return s;
+}
 
-    virtual void task() {
-        kill(_target, SIGKILL);
-    }
-};
+// trim from end
+static inline std::string &rtrim(std::string &s) {
+    s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+    return s;
+}
+
+// trim from both ends
+static inline std::string &trim(std::string &s) {
+    return ltrim(rtrim(s));
+}
 
 bool execute(const char *binPath, int excute_limit, const std::string &send, std::string &recv)
 {
@@ -31,28 +40,39 @@ bool execute(const char *binPath, int excute_limit, const std::string &send, std
     } else if(child == 0) { // child
         close(pipes[0][1]);
         close(pipes[1][0]);
-        dup2(pipes[0][0], fileno(stdin));
-        dup2(pipes[1][1], fileno(stdout));
-        dup2(pipes[1][1], fileno(stderr));
+        close(fileno(stdin));
+        close(fileno(stdout));
+        close(fileno(stderr));
+        dup2(pipes[0][0], 0);
 
-        ::execlp(binPath, binPath, (char*)NULL);
+        //int fd = open("./temp", O_RDWR | O_CREAT | O_TRUNC, 0777);
+        //dup2(fd, 1);
+        dup2(pipes[1][1], 1);
+        //dup2(pipes[1][1], 2);
+        InformMessage("exec path %s", binPath);
+        if(::execl(binPath, binPath, (char*)NULL) == -1) {
+            perror("exec() failed");
+            ErrorMessage("exec() error");
+        }
     } else { // parent
+        //for(int i=10000000;i>=0;i--);
         close(pipes[0][0]);
         close(pipes[1][1]);
 
-        KillTimerTask task(child);
+        Timer::KillTimerTask task(child);
         Timer::Timer t(excute_limit, task);
 
         int &read = pipes[1][0];
         int &write = pipes[0][1];
         char buf[1024];
-        t.start();
+        //t.start();
         ::write(write, send.c_str(), send.size());
 
         while(::read(read, buf, 1024) != 0) {
             recv.append(buf);
         }
-        t.stop();
+        //t.detach();
+        InformMessage("recv buf %s", recv.c_str());
         ::waitpid(child, &status, WNOHANG);
     }
 
@@ -62,88 +82,46 @@ bool execute(const char *binPath, int excute_limit, const std::string &send, std
 Grading::Grading()
 { }
 
-Grading::Grading(question q, std::string codePath, std::string answer):
-        _q(q), _codePath(codePath), _answer(answer), _compiler(new CCompile(codePath))
+Grading::Grading(question &q, std::string codePath
+        , Compile &c):
+        _q(q), _codePath(codePath), _testCases(&q.testcases), _compiler(&c)
 { }
 
 grading_result Grading::grade()
 {
     grading_result result;
+    result.message = "";
     compile_result c_result = _compiler->compile();
+    InformMessage("compile was %s", c_result.error?"failed":"success");
     if(c_result.error) {
         result.message = c_result.message;
     }
     else {
-        std::string p_answer;
-        std::string test_case;
-        if(execute(_codePath.c_str(), _q.limit, test_case, p_answer)) {
-            if(_answer == p_answer) {
-                result.correct = true;
-                result.message = "accept";
+        InformMessage("testcase count %ld", _testCases->size());
+
+        for(int i=0;i<_testCases->size(); i++) {
+            std::string p_answer;
+            std::string test_case = _testCases->at(i).first;
+            std::string answer = _testCases->at(i).second;
+            InformMessage("test_case %s answer %s", test_case.c_str(), answer.c_str());
+            if (execute(_compiler->getBinaryPath().c_str(), _q.limit, test_case, p_answer)) {
+                if (trim(answer) == trim(p_answer)) {
+                    result.correct = true;
+                    result.message = "accept";
+                }
+                else {
+                    result.message = "wrong answer your answer is ";
+                    result.message.append(p_answer);
+                }
             }
             else {
-                result.message = "wrong answer";
+                ErrorMessage("execute() error");
+                result.error = true;
+                result.message.append("grade error:please re submit");
             }
         }
-        else {
-            ErrorMessage("execute() error");
-            result.error = true;
-            result.message.append("grade error:please re submit");
-        }
     }
     return result;
 }
 
-
-
-#pragma mark NonGrading
-
-std::map<std::string, std::string> Compile::_compile_opt;
-
-compile_result CCompile::compile()
-{
-    std::string cmd(getCommand());
-    FILE *pp = popen(cmd.c_str(), "r");
-    struct compile_result result;
-    result.error = false;
-    // 임시저장용
-    char buf[1024];
-
-    // 컴파일 성공시 아무런 메시지를 출력하지 않는다.
-    while(!feof(pp)) {
-        fgets(buf, 1024, pp);
-        result.error = true;
-        result.message.append(buf);
-    }
-
-    return result;
-}
-
-compile_result JavaCompile::compile()
-{
-    struct compile_result result;
-    result.error=false;
-
-    return result;
-}
-
-std::string Compile::getCommand()
-{
-
-    std::string cmd(_compiler);
-    cmd.push_back(' ');
-
-
-    for (auto it = _compile_opt.begin(); it!=_compile_opt.end(); it++) {
-        cmd.append(it->first);
-        cmd.push_back(' ');
-        cmd.append(it->second);
-    }
-
-    cmd.push_back(' ');
-
-    cmd.append(_codePath);
-
-    return cmd;
-}
 

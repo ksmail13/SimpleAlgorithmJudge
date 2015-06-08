@@ -3,6 +3,7 @@
 //
 
 #include "Thread.h"
+#include "logger.h"
 
 std::map<pthread_t, Thread::Thread *> Thread::Thread::_threads;
 
@@ -14,6 +15,7 @@ void *Thread::thread_main(void *args)
 {
     Thread *thread = (Thread *)args;
     thread->run();
+    InformMessage("thread finish");
     thread->_running = false;
     return NULL;
 }
@@ -35,12 +37,14 @@ void Thread::Thread::join(void **ret_data)
 {
     if(_running) {
         _running = false;
+        InformMessage("thread join");
         ::pthread_join(_id, ret_data);
     }
 }
 
 void Thread::Thread::detach() {
     if(_running) {
+        InformMessage("thread detach");
         ::pthread_detach(_id);
         _running = false;
     }
@@ -51,6 +55,7 @@ void Thread::Thread::run() {
 }
 
 void Thread::Thread::stop() {
+    InformMessage("thread kill");
     pthread_kill(_id, SIGKILL);
     _running = false;
 }

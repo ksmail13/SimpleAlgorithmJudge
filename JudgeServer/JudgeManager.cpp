@@ -23,6 +23,7 @@ Judge& JudgeManager::nextJudge() {
 
 void JudgeManager::submit(question &q) {
     Judge &n_judge = nextJudge();
+    n_judge.submit(q);
 }
 
 void JudgeManager::stop() {

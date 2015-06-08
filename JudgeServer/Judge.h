@@ -11,6 +11,7 @@
 #include "Thread.h"
 #include "SemaphoreObejct.h"
 #include "question.h"
+#include "InetSocket.h"
 
 using namespace Thread;
 

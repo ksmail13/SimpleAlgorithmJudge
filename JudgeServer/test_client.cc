@@ -24,7 +24,7 @@ int main()
     memset(&adr, 0, sizeof(adr));
 
     adr.sin_family = AF_INET;
-    adr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    adr.sin_addr.s_addr = inet_addr("192.168.0.14");
     adr.sin_port = htons(54321);
 #if 0
     if(connect(sock, (struct sockaddr*) &adr, sizeof(adr)) == -1) {
@@ -47,10 +47,12 @@ int main()
             perror("send error");
             exit(1);
         }
-        printf("send : %s\n", buf);
+        printf("send : %s len : %d\n", buf, p.len);
+        i_sock.recvPacket(p);
+        printf("recved %s\n", p.buf.c_str());
     }
     fclose(fp);
-    i_sock.close(); 
+    i_sock.close();
 
     return 0;
 }

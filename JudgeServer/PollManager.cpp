@@ -51,6 +51,8 @@ void PollManager::polling(int timeout)
         nevs = epoll_wait(_ed, evs, MAX_POLL, timeout);
         InformMessage("polled! %d", nevs);
         if(nevs == -1) {
+            if(errno == EINTR) continue;
+            perror("epoll_wait()");
             ErrorMessage("epoll_wait() error");
             break;
         }

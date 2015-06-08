@@ -1,1 +1,1 @@
-/home/micky/Documents/Coding/SimpleAlgorithmJudge/Client/acm_gui/jsoncpp.cpp
+/home/mikcy/Documents/Coding/SimpleAlgorithmJudge/Client/acm_gui/jsoncpp.cpp

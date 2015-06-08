@@ -7,6 +7,7 @@
 #include "Judge.h"
 #include "Grading.h"
 #include "logger.h"
+#include "json.h"
 
 
 Judge::Judge() : Thread(), in(0, 0), out(0, 1), mutex(0, 1)
@@ -42,14 +43,29 @@ void Judge::run()
     InformMessage("Judge Start id:%ld", this->getThreadId());
     while(isRunning()) {
         question &q = getQuestion();
+        InformMessage("recv question!! from=%ld qno=%s", this->getThreadId(), q.qno.c_str());
 
         if(isCorrectCode(q.code)) {
             std::string codeName = createCode(q);
-            Grading g(q, codeName, "");
+            Compile c(codeName, q.compiler, std::map<std::string, std::string>());
+            Grading g(q, codeName, c);
+
+            for(auto r : q.testcases) {
+                InformMessage("testcase info %s,%s", r.first.c_str(), r.second.c_str());
+            }
 
             grading_result g_r = g.grade();
 
-            //TODO : send message to examiner
+            Json::StyledWriter writer;
+            Json::Value value;
+            Network::packet p;
+            value["result"] = g_r.correct?"true":"false";
+            value["error"] = g_r.error?"true":"false";
+            value["message"] = g_r.message;
+            p.buf =writer.write(value);
+            p.len = p.buf.size();
+            InformMessage("result %s", p.buf.c_str());
+            q.examinee->sendPacket(p);
         }
 
         // 현재 채점중인 로직에 대한 시간도 작업량에 반영하기 위해서
@@ -59,7 +75,7 @@ void Judge::run()
         InformMessage("finish Judge id:%ld", this->getThreadId());
     }
 
-    InformMessage("Judge Start id:%ld", this->getThreadId());
+    InformMessage("Judge END id:%ld", this->getThreadId());
 }
 
 question &Judge::getQuestion() {
@@ -84,18 +100,18 @@ void Judge::popQuestion() {
 
 std::string Judge::createCode(const question &q) const {
     char name[100];
-    sprintf(name, "submits/%s_%s_%ld.%s", q.title.c_str(), q.examinee_id.c_str(), time(NULL), q.extends.c_str());
-
+    sprintf(name, "/home/mikcy/Documents/Coding/submits/%s_%s_%ld.%s", q.title.c_str(), q.examinee_id.c_str(), time(NULL), q.extends.c_str());
+    InformMessage("name %s", name);
     std::fstream codeFile(name, std::ios_base::out);
     codeFile << q.code;
     codeFile.flush();
     codeFile.close();
 
-    return name;
+    return std::string(name);
 }
 
 bool Judge::isCorrectCode(const std::string &code) {
 
-    return code.find("#include <sys/socket.h>") == std::string::npos &&
+    return code.length() > 0 && code.find("#include <sys/socket.h>") == std::string::npos &&
             code.find("#include <unistd.h>") == std::string::npos;
 }
