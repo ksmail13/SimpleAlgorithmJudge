@@ -28,7 +28,7 @@ bool InetSocket::sendPacket(packet p)
     *size = p.len+1;
     strcpy(buf+4, p.buf.c_str());
     buf[p.len+sizeof(p.len)+1] = '\0';
-    write(buf, p.len+sizeof(p.len));
+    write(buf, p.len+sizeof(p.len)+1);
 
     return true;
 }
