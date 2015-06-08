@@ -417,6 +417,10 @@ JudgeServer.h
 /home/mikcy/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/JudgeServer.h
 logger.h
 /home/mikcy/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/logger.h
+unistd.h
+-
+signal.h
+-
 
 /home/mikcy/Documents/Coding/SimpleAlgorithmJudge/JudgeServer/question.h
 InetSocket.h
