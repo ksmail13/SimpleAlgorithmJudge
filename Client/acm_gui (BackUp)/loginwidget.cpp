@@ -66,9 +66,7 @@ LoginWidget::LoginWidget(QWidget *parent) : QWidget(parent)
     layout_box->addWidget(group_login);
     layout_box->addLayout(layout_grid_button);
 
-
     setLayout(layout_box);
-
 }
 
 QString LoginWidget::getID()

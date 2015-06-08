@@ -45,19 +45,15 @@ MainWidget::MainWidget() : QWidget()
     //History Tab
     tab_history = new QWidget();
 
-
-
     //Add Tab, Icon Img?
     static QIcon Img_submit(QPixmap("./image/submit.png"));
     widget_tab->addTab(tab_submit, Img_submit, tr("Submit"));
     static QIcon Img_history(QPixmap("history.png"));
     widget_tab->addTab(tab_history, Img_history, tr("History"));
 
-
     //add tab widget and buttons to layout_main
     layout_main = new QVBoxLayout;
     layout_main->addWidget(widget_tab);
-
     layout_main->addLayout(layout_grid_buttons);
 
     setLayout(layout_main);

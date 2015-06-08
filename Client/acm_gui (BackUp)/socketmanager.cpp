@@ -21,9 +21,9 @@ bool SocketManager::setIP(QString ip)
     return ret;
 }
 
-Json::Value SocketManager::send(Json::Value &root)
+void SocketManager::send(Json::Value &root)
 {
-/*
+
     size_t len;
     //len = str.size();
 
@@ -31,31 +31,12 @@ Json::Value SocketManager::send(Json::Value &root)
 
     Json::StyledWriter writer;
     string output = writer.write(root);
+
     len = output.length();
-
-
     sprintf(buf, "%s", root.toStyledString().c_str());
     //buf = output.c_str(); //type const void*
-*/
-    packet p = makePacket(root);
-    _socket->sendPacket(p);
-    //_socket->send(buf, len, 0);
 
-    return receive();
-}
-
-Json::Value SocketManager::receive()
-{
-    packet p;
-    _socket->recvPacket(p);
-    //_socket->recv(buf, 100, 0);
-    //QString message = QString(buf);
-
-    Json::Reader reader;
-    Json::Value root;
-    reader.parse(p.buf, root);
-
-    return root;
+    _socket->send(buf, len, 0);
 }
 
 void SocketManager::close()
@@ -63,23 +44,8 @@ void SocketManager::close()
     _socket->close();
 }
 
-packet SocketManager::makePacket(Json::Value &root)
-{
-    packet p;
-
-    Json::StyledWriter writer;
-    string str = writer.write(root);
-    int len = str.length();
-
-    p.len = len;
-    p.buf = str;
-
-    return p;
-}
-
 SocketManager::~SocketManager()
 {
     //delete _socket;
 }
-
 

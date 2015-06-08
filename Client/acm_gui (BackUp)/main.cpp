@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include "loginwindow.h"
 
 #include <QApplication>
 
@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     //LoginWidget mywidget;
-    MainWindow mainwindow;
+    LoginWindow loginwindow;
 
     //mywindow.setCentralWidget(&mywidget);
-    mainwindow.show();
+    loginwindow.show();
     return app.exec();
 }

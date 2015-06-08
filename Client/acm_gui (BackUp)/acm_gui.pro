@@ -14,28 +14,26 @@ CONFIG += c++11
 
 
 SOURCES += main.cpp\
+    loginwidget.cpp \
+    loginwindow.cpp \
+    mainwidget.cpp \
     socketmanager.cpp \
     jsoncpp.cpp \
     BasicSocket.cpp \
     InetSocket.cpp \
-    Thread.cpp \
-    MainWindow.cpp \
-    SubmitWidget.cpp \
-    LoginWidget.cpp \
-    ReadThread.cpp
+    Thread.cpp
 
 HEADERS  += \
+    loginwidget.h \
+    loginwindow.h \
+    mainwidget.h \
     InetSocket.h \
     BasicSocket.h \
     socketmanager.h \
     logger.h \
     json-forwards.h \
     json.h \
-    Thread.h \
-    MainWindow.h \
-    SubmitWidget.h \
-    LoginWidget.h \
-    ReadThread.h
+    Thread.h
 
 FORMS    += \
     loginwindow.ui

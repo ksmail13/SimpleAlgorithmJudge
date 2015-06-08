@@ -13,7 +13,7 @@ LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent)//, ui(new Ui::Ma
     setFixedSize(600, 400);
     setWindowTitle("Login");
 
-    widget_login = new LoginWidget;
+    widget_login = new LoginWidget(this);
     setCentralWidget(widget_login);
     show();
 
@@ -55,17 +55,19 @@ void LoginWindow::sendLoginInfo()
         else
         {
             str = QString("id : %1\npw : %2\nip : %3").arg(id, pw, ip);
+            Json::Value root;
+            Json::Value ID;
+            root["ID"] = id.toStdString().c_str();
+            Json::Value PW;
+            root["PW"] = pw.toStdString().c_str();
 
-            socket_manager->send(str);
+            socket_manager->send(root);
             newWidget();
         }
     }
 
     msgBox.setText(str);
     msgBox.exec();
-
-
-
 }
 
 void LoginWindow::helpBox()
@@ -84,15 +86,17 @@ void LoginWindow::newWidget()
     widget_main = new MainWidget;
     connect(widget_main->button_logout, SIGNAL(clicked()), this, SLOT(logOut()));
     setCentralWidget(widget_main);
+
+    //thread create for receive
 }
 
 void LoginWindow::logOut()
 {
     this->takeCentralWidget();
-    
+
     //close socket
-    socket_manager
-    
+    socket_manager->close();
+
     setWindowTitle("Login");
     widget_login = new LoginWidget;
     connect(widget_login->button_help, SIGNAL(clicked()), this, SLOT(helpBox()));

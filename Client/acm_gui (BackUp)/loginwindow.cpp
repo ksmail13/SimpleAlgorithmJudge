@@ -68,9 +68,6 @@ void LoginWindow::sendLoginInfo()
 
     msgBox.setText(str);
     msgBox.exec();
-
-
-
 }
 
 void LoginWindow::helpBox()
@@ -89,6 +86,8 @@ void LoginWindow::newWidget()
     widget_main = new MainWidget;
     connect(widget_main->button_logout, SIGNAL(clicked()), this, SLOT(logOut()));
     setCentralWidget(widget_main);
+
+    //thread create for receive
 }
 
 void LoginWindow::logOut()

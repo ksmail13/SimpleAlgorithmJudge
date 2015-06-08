@@ -21,11 +21,8 @@ public:
     const u_int16_t port = 54321;
 
     bool setIP(QString ip);
-    Json::Value send(Json::Value &root);
-    Json::Value receive();
+    void send(Json::Value &root);
     void close();
-    InetSocket getSocket();
-    packet makePacket(Json::Value &root);
 
 };
 
