@@ -1,3 +1,4 @@
+
 #include "InetSocket.h"
 #include "logger.h"
 using namespace Network;
@@ -17,13 +18,18 @@ BasicSocket *InetSocket::accept()
 
 bool InetSocket::sendPacket(packet p)
 {
-    char *temp = new char[p.len+sizeof(p.len)];
-    int *size = (int*)temp;
-    *size = p.len;
-    strcpy(temp+4, p.buf.c_str());
-    write(temp, p.len+sizeof(p.len));
+    if(buf == nullptr)
+        buf = (char*)calloc(sizeof(char), p.len+sizeof(p.len)+1);
+    else
+        buf = (char*)realloc(buf, p.len+sizeof(p.len)+1);
 
-    delete[] temp;
+    //std::vector<char> temp;
+    int *size = (int*)buf;
+    *size = p.len+1;
+    strcpy(buf+4, p.buf.c_str());
+    buf[p.len+sizeof(p.len)+1] = '\0';
+    write(buf, p.len+sizeof(p.len));
+
     return true;
 }
 

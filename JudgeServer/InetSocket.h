@@ -17,7 +17,11 @@ namespace Network
     {
     public:
         const static unsigned int BUF_SIZE = 1024;
-        virtual ~InetSocket() {}
+        virtual ~InetSocket() {
+            if(buf != nullptr) {
+                free(buf);
+            }
+        }
 
         InetSocket() {}
         InetSocket(FileDescriptor fd) : BasicSocket(fd) {}
@@ -35,6 +39,9 @@ namespace Network
         bool sendPacket(packet p);
 
         bool recvPacket(packet &p);
+
+    private :
+        char *buf = nullptr;
                 
     };
 };
